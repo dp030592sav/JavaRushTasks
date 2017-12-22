@@ -12,7 +12,7 @@ public class Solution {
     public static void main(String[] args) {
         //исправьте outputStream/inputStream в соответствии с путем к вашему реальному файлу
         try {
-            File your_file_name = File.createTempFile("your_file_name", null);
+            File your_file_name = File.createTempFile("File", ".txt", new File("C:\\Users\\User\\Desktop"));
             OutputStream outputStream = new FileOutputStream(your_file_name);
             InputStream inputStream = new FileInputStream(your_file_name);
 
@@ -24,6 +24,7 @@ public class Solution {
             somePerson.load(inputStream);
             inputStream.close();
             //check here that ivanov equals to somePerson - проверьте тут, что ivanov и somePerson равны
+            System.out.println(ivanov.equals(somePerson));
 
         } catch (IOException e) {
             //e.printStackTrace();
@@ -67,11 +68,28 @@ public class Solution {
         }
 
         public void save(OutputStream outputStream) throws Exception {
-            //implement this method - реализуйте этот метод
+            PrintWriter printWriter = new PrintWriter(outputStream);
+            printWriter.print(name + System.getProperty("line.separator"));
+
+            if (assets != null && !assets.isEmpty())
+            {
+                for (Asset i : assets) {
+                    printWriter.write(i.getName() + System.getProperty("line.separator"));
+                    printWriter.write(i.getPrice() + System.getProperty("line.separator"));
+                }
+            }
+
+            printWriter.flush();
         }
 
         public void load(InputStream inputStream) throws Exception {
-            //implement this method - реализуйте этот метод
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            name = reader.readLine();
+
+            while (reader.ready()) {
+                assets.add(new Asset(reader.readLine(), Double.parseDouble(reader.readLine())));
+            }
+            reader.close();
         }
     }
 }
