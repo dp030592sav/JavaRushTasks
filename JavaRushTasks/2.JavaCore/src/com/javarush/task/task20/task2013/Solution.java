@@ -49,21 +49,21 @@ public class Solution {
 
         @Override
         public void writeExternal(ObjectOutput out) throws IOException {
+            out.writeObject(mother);
+            out.writeObject(father);
             out.writeObject(firstName);
             out.writeObject(lastName);
             out.writeInt(age);
-            out.writeObject(mother);
-            out.writeObject(father);
             out.writeObject(children);
         }
 
         @Override
         public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+            mother = (Person)in.readObject();
+            father = (Person)in.readObject();
             firstName = (String)in.readObject();
             lastName = (String)in.readObject();
             age = in.readInt();
-            father = (Person)in.readObject();
-            mother = (Person)in.readObject();
             children = (List)in.readObject();
         }
     }
