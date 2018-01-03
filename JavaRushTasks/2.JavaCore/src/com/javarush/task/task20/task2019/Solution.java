@@ -20,7 +20,7 @@ import java.util.Map;
 public class Solution implements Serializable {
 
     public static void main(String args[]) throws Exception {
-        FileOutputStream fileOutput = new FileOutputStream("C:\\Users\\Sloboda Alex\\Desktop\\qwe1.txt");
+        FileOutputStream fileOutput = new FileOutputStream("C:\\Users\\user\\Desktop\\qwe1.txt");
         ObjectOutputStream outputStream = new ObjectOutputStream(fileOutput);
 
         Solution solution = new Solution();
@@ -30,7 +30,7 @@ public class Solution implements Serializable {
         outputStream.close();
 
         //loading
-        FileInputStream fiStream = new FileInputStream("C:\\Users\\Sloboda Alex\\Desktop\\qwe1.txt");
+        FileInputStream fiStream = new FileInputStream("C:\\Users\\user\\Desktop\\qwe1.txt");
         ObjectInputStream objectStream = new ObjectInputStream(fiStream);
 
         Solution loadedObject = (Solution) objectStream.readObject();
