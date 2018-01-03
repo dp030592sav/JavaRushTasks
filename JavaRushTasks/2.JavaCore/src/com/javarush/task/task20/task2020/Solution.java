@@ -49,17 +49,6 @@ public class Solution {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Person person = new Person("fName", "lName", "Ukr", Sex.MALE);
 
-        ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
-        ObjectOutputStream outputStream = new ObjectOutputStream(arrayOutputStream);
-
-        outputStream.writeObject(person);
-
-        ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(arrayOutputStream.toByteArray());
-        ObjectInputStream inputStream = new ObjectInputStream(arrayInputStream);
-
-        Person person1 = (Person) inputStream.readObject();
-        System.out.println(person1.country);
     }
 }
