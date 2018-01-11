@@ -23,4 +23,6 @@ public class Solution {
         System.out.println(Solution.calculate(false, true, true, false));
         System.out.println(Solution.calculate(false, false, true, true));
     }
+    public class StringObject {
+    }
 }
