@@ -1,0 +1,28 @@
+2018-02-04 18:12:10 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-02-04 18:12:10 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-02-04 18:12:10 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-02-04 18:12:12 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:12:12 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:12:12 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-02-04 18:12:12 INFO  ApacheHttpClient.login(213) - responseCode = 200
+2018-02-04 18:12:12 INFO  ApacheHttpClient.login(244) - JSESSIONID=5CA347B65D15A2892490336AE7FB31AA
+2018-02-04 18:12:12 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-02-04 18:12:12 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-02-04 18:12:12 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-02-04 18:12:12 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-02-04 18:12:15 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:12:15 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:12:15 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:12:15 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:12:16 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-04 18:12:19 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:12:19 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:12:19 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:12:19 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:12:20 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:12:20 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:13:12 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-04 18:13:50 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-04 18:13:50 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-04 18:14:12 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
