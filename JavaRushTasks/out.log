@@ -6904,3 +6904,433 @@ java.io.IOException: Server returned HTTP response code: 504 for URL: https://ja
 2018-02-15 17:53:04 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
 2018-02-15 17:53:05 INFO  ApacheHttpClient.completed(27) - responseCode = 200
 2018-02-15 17:53:05 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-02-15 21:15:25 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-02-15 21:15:25 INFO  ApacheHttpClient.createAsyncHttpClient(125) - Выбрано 1 прокси.
+2018-02-15 21:15:25 INFO  ApacheHttpClient.<init>(85) - ApacheHttpClient проинстанциирован успешно.
+2018-02-15 21:15:25 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:15:25 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:15:26 INFO  ApacheHttpClient.login(209) - Ожидание ответа сервера.
+2018-02-15 21:15:26 INFO  ApacheHttpClient.login(213) - responseCode = 200
+2018-02-15 21:15:26 INFO  ApacheHttpClient.login(244) - JSESSIONID=55E83F99DCC24C7E2A2D52B43AE969E3
+2018-02-15 21:15:26 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-02-15 21:15:26 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-02-15 21:15:26 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-02-15 21:15:26 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-02-15 21:15:39 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:15:39 INFO  ApacheHttpClient.getFilteredTasks(307) - responseCode = 200
+2018-02-15 21:15:43 INFO  ApacheHttpClient.getTaskTemplateInfo(324) - responseCode = 200
+2018-02-15 21:15:43 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:15:43 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:15:43 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:15:43 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:15:45 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:16:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:17:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:18:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:18:34 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:18:34 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:19:17 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:19:17 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:19:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:20:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:21:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:22:26 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:23:22 INFO  JavaRushTasksProjectComponent.projectClosing(157) - ---------- Project JavaRushTasks closed ----------
+
+2018-02-15 21:23:22 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-02-15 21:23:22 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+
+2018-02-15 21:23:23 INFO  ApacheHttpClient.refreshUserInfo(272) - responseCode = 200
+2018-02-15 21:23:23 INFO  ApacheHttpClient.refreshUserInfo(278) - Информация о пользователе получена.
+2018-02-15 21:23:23 INFO  ApacheHttpClient.startGA(32) - GAService запущен.
+2018-02-15 21:23:23 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-02-15 21:23:23 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:23 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:23 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:23 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:23 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:23:23 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:23 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:24 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:24 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:24 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:24 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:27 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:27 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:32 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:23:32 INFO  ApacheHttpClient.getFilteredTasks(307) - responseCode = 200
+2018-02-15 21:23:33 INFO  ApacheHttpClient.getTaskTemplateInfo(324) - responseCode = 200
+2018-02-15 21:23:33 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:33 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:33 INFO  ApacheHttpClient.testConnection(178) - responseCode = 200
+2018-02-15 21:23:33 INFO  ApacheHttpClient.testConnection(185) - result = true
+2018-02-15 21:23:33 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:23:35 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:23:35 INFO  ApacheHttpClient.getFilteredTasks(307) - responseCode = 200
+2018-02-15 21:24:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:25:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:26:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:27:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:28:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:29:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:30:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:31:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:32:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:33:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:34:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:35:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:36:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:37:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:38:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:39:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:40:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:41:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:42:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:43:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:44:22 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:44:22 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-02-15 21:44:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:45:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:46:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:47:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:48:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:49:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:50:04 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 21:50:05 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-02-15 21:50:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:51:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:52:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:53:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:54:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:55:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:56:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:57:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:58:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 21:59:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:00:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:01:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:02:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:03:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:04:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:05:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:06:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:07:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:08:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:09:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:10:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:11:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:12:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:13:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:14:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:15:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:16:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:17:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:18:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:19:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:20:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:21:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:22:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:23:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:24:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:25:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:26:16 ERROR PluginManager.error(134) - null
+java.lang.NullPointerException
+	at javafx.embed.swing.JFXPanel.getInputMethodRequests(JFXPanel.java:810)
+	at sun.awt.im.InputMethodAdapter.haveActiveClient(InputMethodAdapter.java:61)
+	at sun.awt.windows.WInputMethod.deactivate(WInputMethod.java:340)
+	at sun.awt.im.InputContext.deactivateInputMethod(InputContext.java:492)
+	at sun.awt.im.InputContext.focusLost(InputContext.java:458)
+	at sun.awt.im.InputContext.removeNotify(InputContext.java:627)
+	at java.awt.Component.removeNotify(Component.java:7018)
+	at java.awt.Container.removeNotify(Container.java:2820)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at javafx.embed.swing.JFXPanel.removeNotify(JFXPanel.java:829)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.remove(Container.java:1206)
+	at java.awt.Container.remove(Container.java:1264)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.removeDeferredNow(JBTabsImpl.java:1047)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.lambda$removeDeferred$6(JBTabsImpl.java:1020)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:649)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.l(FocusManagerImpl.java:630)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.n(FocusManagerImpl.java:600)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.b(FocusManagerImpl.java:482)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2489)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:462)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.doWhenFocusSettlesDown(IdeFocusManagerImpl.java:60)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.removeDeferred(JBTabsImpl.java:1026)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.lambda$executeSelectionChange$4(JBTabsImpl.java:920)
+	at com.intellij.openapi.util.ExecutionCallback.setExecuted(ExecutionCallback.java:58)
+	at com.intellij.openapi.util.ActionCallback.setDone(ActionCallback.java:72)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.b(FocusManagerImpl.java:290)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2489)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:288)
+	at com.intellij.openapi.util.ActionCallback$ExecutedExecutionCallback.doWhenExecuted(ActionCallback.java:187)
+	at com.intellij.openapi.util.ActionCallback.doWhenDone(ActionCallback.java:111)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:288)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at com.intellij.ide.IdeEventQueue.c(IdeEventQueue.java:843)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:679)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:391)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-02-15 22:26:16 ERROR PluginManager.b(142) - IntelliJ IDEA 2016.3  Build #IU-163.7743.44
+2018-02-15 22:26:16 ERROR PluginManager.b(149) - JDK: 1.8.0_77
+2018-02-15 22:26:16 ERROR PluginManager.b(150) - VM: Java HotSpot(TM) 64-Bit Server VM
+2018-02-15 22:26:16 ERROR PluginManager.b(151) - Vendor: Oracle Corporation
+2018-02-15 22:26:16 ERROR PluginManager.b(152) - OS: Windows 10
+2018-02-15 22:26:16 ERROR PluginManager.b(158) - Last Action: EditorLeft
+2018-02-15 22:26:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:26:46 ERROR TimedOutCallback.error(134) - Focus command timed out, cmd=FocusCommand objectCount=1 objects=[EditorComponent file=file://C:/D/JavaRush/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task25/task2503/Column.java]
+java.lang.Exception
+	at com.intellij.openapi.wm.FocusCommand.saveAllocation(FocusCommand.java:144)
+	at com.intellij.openapi.wm.FocusCommand.<init>(FocusCommand.java:78)
+	at com.intellij.openapi.wm.FocusCommand$ByComponent.<init>(FocusCommand.java:171)
+	at com.intellij.openapi.wm.FocusCommand$ByComponent.<init>(FocusCommand.java:167)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.requestFocus(JBTabsImpl.java:987)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.executeSelectionChange(JBTabsImpl.java:915)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.access$1900(JBTabsImpl.java:66)
+	at com.intellij.ui.tabs.impl.JBTabsImpl$9.run(JBTabsImpl.java:868)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer$1.a(EditorTabbedContainer.java:137)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer$1.execute(EditorTabbedContainer.java:135)
+	at com.intellij.ui.tabs.impl.JBTabsImpl._setSelected(JBTabsImpl.java:864)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.select(JBTabsImpl.java:855)
+	at com.intellij.ui.tabs.impl.TabLabel$1.mousePressed(TabLabel.java:94)
+	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+	at java.awt.Component.processMouseEvent(Component.java:6532)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4522)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at com.intellij.ide.IdeEventQueue.c(IdeEventQueue.java:843)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:675)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:391)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-02-15 22:26:46 ERROR TimedOutCallback.b(142) - IntelliJ IDEA 2016.3  Build #IU-163.7743.44
+2018-02-15 22:26:46 ERROR TimedOutCallback.b(149) - JDK: 1.8.0_77
+2018-02-15 22:26:46 ERROR TimedOutCallback.b(150) - VM: Java HotSpot(TM) 64-Bit Server VM
+2018-02-15 22:26:46 ERROR TimedOutCallback.b(151) - Vendor: Oracle Corporation
+2018-02-15 22:26:46 ERROR TimedOutCallback.b(152) - OS: Windows 10
+2018-02-15 22:26:46 ERROR TimedOutCallback.b(158) - Last Action: RunClass
+2018-02-15 22:27:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:27:55 ERROR PluginManager.error(134) - null
+java.lang.NullPointerException
+	at javafx.embed.swing.JFXPanel.getInputMethodRequests(JFXPanel.java:810)
+	at sun.awt.im.InputMethodAdapter.haveActiveClient(InputMethodAdapter.java:61)
+	at sun.awt.windows.WInputMethod.deactivate(WInputMethod.java:340)
+	at sun.awt.im.InputContext.deactivateInputMethod(InputContext.java:492)
+	at sun.awt.im.InputContext.focusLost(InputContext.java:458)
+	at sun.awt.im.InputContext.removeNotify(InputContext.java:627)
+	at java.awt.Component.removeNotify(Component.java:7018)
+	at java.awt.Container.removeNotify(Container.java:2820)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at javafx.embed.swing.JFXPanel.removeNotify(JFXPanel.java:829)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.removeNotify(Container.java:2804)
+	at javax.swing.JComponent.removeNotify(JComponent.java:4758)
+	at java.awt.Container.remove(Container.java:1206)
+	at java.awt.Container.remove(Container.java:1264)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.removeDeferredNow(JBTabsImpl.java:1047)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.lambda$removeDeferred$6(JBTabsImpl.java:1020)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:649)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.l(FocusManagerImpl.java:630)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.n(FocusManagerImpl.java:600)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.b(FocusManagerImpl.java:482)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2489)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:462)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.doWhenFocusSettlesDown(IdeFocusManagerImpl.java:60)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.removeDeferred(JBTabsImpl.java:1026)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.lambda$executeSelectionChange$4(JBTabsImpl.java:920)
+	at com.intellij.openapi.util.ExecutionCallback.setExecuted(ExecutionCallback.java:58)
+	at com.intellij.openapi.util.ActionCallback.setDone(ActionCallback.java:72)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.b(FocusManagerImpl.java:290)
+	at com.intellij.util.ui.UIUtil.invokeLaterIfNeeded(UIUtil.java:2489)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:288)
+	at com.intellij.openapi.util.ActionCallback$ExecutedExecutionCallback.doWhenExecuted(ActionCallback.java:187)
+	at com.intellij.openapi.util.ActionCallback.doWhenDone(ActionCallback.java:111)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.a(FocusManagerImpl.java:288)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at com.intellij.ide.IdeEventQueue.c(IdeEventQueue.java:843)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:679)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:391)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-02-15 22:27:55 ERROR PluginManager.b(142) - IntelliJ IDEA 2016.3  Build #IU-163.7743.44
+2018-02-15 22:27:55 ERROR PluginManager.b(149) - JDK: 1.8.0_77
+2018-02-15 22:27:55 ERROR PluginManager.b(150) - VM: Java HotSpot(TM) 64-Bit Server VM
+2018-02-15 22:27:55 ERROR PluginManager.b(151) - Vendor: Oracle Corporation
+2018-02-15 22:27:55 ERROR PluginManager.b(152) - OS: Windows 10
+2018-02-15 22:27:55 ERROR PluginManager.b(158) - Last Action: Rerun
+2018-02-15 22:28:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:28:25 ERROR TimedOutCallback.error(134) - Focus command timed out, cmd=FocusCommand objectCount=1 objects=[EditorComponent file=file://C:/D/JavaRush/JavaRushTasks/3.JavaMultithreading/src/com/javarush/task/task25/task2503/Solution.java]
+java.lang.Exception
+	at com.intellij.openapi.wm.FocusCommand.saveAllocation(FocusCommand.java:144)
+	at com.intellij.openapi.wm.FocusCommand.<init>(FocusCommand.java:78)
+	at com.intellij.openapi.wm.FocusCommand$ByComponent.<init>(FocusCommand.java:171)
+	at com.intellij.openapi.wm.FocusCommand$ByComponent.<init>(FocusCommand.java:167)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.requestFocus(JBTabsImpl.java:987)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.executeSelectionChange(JBTabsImpl.java:915)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.access$1900(JBTabsImpl.java:66)
+	at com.intellij.ui.tabs.impl.JBTabsImpl$9.run(JBTabsImpl.java:868)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer$1.a(EditorTabbedContainer.java:137)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.a(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer$1.execute(EditorTabbedContainer.java:135)
+	at com.intellij.ui.tabs.impl.JBTabsImpl._setSelected(JBTabsImpl.java:864)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.select(JBTabsImpl.java:855)
+	at com.intellij.ui.tabs.impl.TabLabel$1.mousePressed(TabLabel.java:94)
+	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+	at java.awt.AWTEventMulticaster.mousePressed(AWTEventMulticaster.java:279)
+	at java.awt.Component.processMouseEvent(Component.java:6532)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6300)
+	at java.awt.Container.processEvent(Container.java:2236)
+	at java.awt.Component.dispatchEventImpl(Component.java:4891)
+	at java.awt.Container.dispatchEventImpl(Container.java:2294)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4888)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4522)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4466)
+	at java.awt.Container.dispatchEventImpl(Container.java:2280)
+	at java.awt.Window.dispatchEventImpl(Window.java:2750)
+	at java.awt.Component.dispatchEvent(Component.java:4713)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:758)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.awt.EventQueue$4.run(EventQueue.java:729)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:728)
+	at com.intellij.ide.IdeEventQueue.c(IdeEventQueue.java:843)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:675)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:391)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-02-15 22:28:25 ERROR TimedOutCallback.b(142) - IntelliJ IDEA 2016.3  Build #IU-163.7743.44
+2018-02-15 22:28:25 ERROR TimedOutCallback.b(149) - JDK: 1.8.0_77
+2018-02-15 22:28:25 ERROR TimedOutCallback.b(150) - VM: Java HotSpot(TM) 64-Bit Server VM
+2018-02-15 22:28:25 ERROR TimedOutCallback.b(151) - Vendor: Oracle Corporation
+2018-02-15 22:28:25 ERROR TimedOutCallback.b(152) - OS: Windows 10
+2018-02-15 22:28:25 ERROR TimedOutCallback.b(158) - Last Action: QuickJavaDoc
+2018-02-15 22:29:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:30:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:31:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:32:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:33:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:34:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:35:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:36:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:37:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:38:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:39:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:40:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:41:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:42:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:43:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:44:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:45:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:46:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:47:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:48:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:49:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:50:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:51:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:52:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:53:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:54:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:55:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:56:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:57:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
+2018-02-15 22:58:09 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 22:58:10 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-02-15 22:58:11 INFO  ApacheHttpClient.getWebResourceAsStream(420) - responseCode = 200
+2018-02-15 22:58:12 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-02-15 22:58:12 INFO  ApacheHttpClient.getTask(405) - responseCode = 200
+2018-02-15 22:58:23 INFO  ApacheHttpClient.sendEvent(450) - responseCode = 200
