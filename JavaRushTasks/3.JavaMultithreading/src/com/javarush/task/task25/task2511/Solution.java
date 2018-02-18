@@ -1,7 +1,6 @@
 package com.javarush.task.task25.task2511;
 
 import java.util.TimerTask;
-import java.util.regex.Pattern;
 
 /* 
 Вооружаемся до зубов!
