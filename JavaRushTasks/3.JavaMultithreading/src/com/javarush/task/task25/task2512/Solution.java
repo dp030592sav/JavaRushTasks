@@ -1,8 +1,5 @@
 package com.javarush.task.task25.task2512;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-
 /*
 Живем своим умом
 */
