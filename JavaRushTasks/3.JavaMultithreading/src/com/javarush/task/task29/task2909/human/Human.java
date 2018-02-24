@@ -4,46 +4,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Human {
+public class Human implements Alive{
     private List<Human> children = new ArrayList<>();
-    public static int nextId = 0;
+    private static int nextId = 0;
     private int id;
     protected int age;
     protected String name;
-    protected int course;
 
-    protected int[] size;
+    protected Size size;
 
-    protected boolean isSoldier;
+    private BloodGroup bloodGroup;
 
-    public static final int FIRST = 1;
-    public static final int SECOND = 2;
-    public static final int THIRD = 3;
-    public static final int FOURTH = 4;
-    private int bloodGroup;
-
-    public List<Human> getChildren() {
-        return Collections.unmodifiableList(children);
-    }
-
-    public void addChild(Human human){
-        children.add(human);
-    }
-
-    public void removeChild(Human human){
-        children.remove(human);
-    }
-
-    public void setBloodGroup(int code) {
+    public void setBloodGroup(BloodGroup code) {
         bloodGroup = code;
     }
 
-    public int getBloodGroup() {
+    public BloodGroup getBloodGroup() {
         return bloodGroup;
     }
 
-    public Human(boolean isSoldier) {
-        this.isSoldier = isSoldier;
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
         this.id = nextId;
         nextId++;
     }
@@ -64,27 +46,37 @@ public class Human {
         this.name = name;
     }
 
-    public int getCourse() {
-        return course;
+    public List<Human> getChildren() {
+        return Collections.unmodifiableList(children);
     }
 
-    public void live() {
-        if (isSoldier)
-            fight();
+    public void addChild(Human human){
+        children.add(human);
     }
 
-    public void fight() {
+    public void removeChild(Human human){
+        children.remove(human);
     }
+
+    public void live() {}
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void printSize() {
+        System.out.println("Рост: " + size.height + " Вес: " + size.weight);
     }
 
-    public void printSize() {
-        System.out.println("Рост: " + size[0] + " Вес: " + size[1]);
+    public String getPosition(){
+        return "Человек";
+    }
+
+    public void printData() {
+        System.out.println(String.format("%s: %s", getPosition(), name));
+    }
+
+    public class Size{
+        public int height, weight;
     }
 }

@@ -18,26 +18,20 @@ public class Car {
     private boolean driverAvailable;
     private int numberOfPassengers;
 
-    public Car(int type, int numberOfPassengers) {
+    protected Car(int type, int numberOfPassengers) {
         this.type = type;
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    public int fill(double numberOfLiters) {
+    public void fill(double numberOfLiters) throws Exception {
         if (numberOfLiters < 0)
-            return -1;
+           throw new Exception();
         fuel += numberOfLiters;
-        return 0;
     }
 
     public double getTripConsumption(Date date, int length, Date SummerStart, Date SummerEnd) {
-        double consumption;
-        if (date.before(SummerStart) || date.after(SummerEnd)) {
-            consumption = length * winterFuelConsumption + winterWarmingUp;
-        } else {
-            consumption = length * summerFuelConsumption;
-        }
-        return consumption;
+        return isSummer(date, SummerStart, SummerEnd) ? getSummerConsumption(length)
+                : getWinterConsumption(length);
     }
 
     public int getNumberOfPassengersCanBeTransferred() {
@@ -78,5 +72,26 @@ public class Car {
         if (type == SEDAN)
             return 120;
         return 90;
+    }
+
+    public static Car create(int type, int numberOfPassengers){
+        switch (type){
+            case 0: return new Truck(numberOfPassengers);
+            case 1: return new Sedan(numberOfPassengers);
+            case 2: return new Cabriolet(numberOfPassengers);
+        }
+        return null;
+    }
+
+    public boolean isSummer(Date date , Date summerStart, Date summerEnd){
+        return date.getTime() >= summerStart.getTime() && date.getTime() <= summerEnd.getTime();
+    }
+
+    public double getWinterConsumption(int length){
+        return length * winterFuelConsumption + winterWarmingUp;
+    }
+
+    public double getSummerConsumption(int length){
+        return length * summerFuelConsumption;
     }
 }
