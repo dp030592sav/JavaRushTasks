@@ -94,4 +94,8 @@ public class Car {
     public double getSummerConsumption(int length){
         return length * summerFuelConsumption;
     }
+
+    public boolean canPassengersBeTransferred(){
+        return isDriverAvailable() && fuel > 0;
+    }
 }
