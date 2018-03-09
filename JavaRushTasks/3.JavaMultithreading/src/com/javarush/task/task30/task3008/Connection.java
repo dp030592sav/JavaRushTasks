@@ -37,8 +37,8 @@ public class Connection implements Closeable
 
     @Override
     public void close() throws IOException {
-        out.close();
-        in.close();
-        socket.close();
+            out.close();
+            in.close();
+            socket.close();
     }
 }
