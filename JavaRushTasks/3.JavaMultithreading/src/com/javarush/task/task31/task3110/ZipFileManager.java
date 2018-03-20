@@ -3,9 +3,7 @@ package com.javarush.task.task31.task3110;
 import com.javarush.task.task31.task3110.exception.PathIsNotFoundException;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -77,6 +75,34 @@ public class ZipFileManager {
         }
 
         return files;
+    }
+
+    public void extractAll(Path outputFolder) throws Exception {
+        if (Files.notExists(zipFile) || !Files.isRegularFile(zipFile))
+            throw new WrongZipFileException();
+
+        try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(zipFile.toString()))) {
+            ZipEntry entry = zipInputStream.getNextEntry();
+            String nextFileName;
+            while (entry != null) {
+                nextFileName = entry.getName();
+                File nextFile = new File(outputFolder + File.separator + nextFileName);
+                // Если мы имеем дело с каталогом - надо его создать. Если
+                // этого не сделать, то не будут созданы пустые каталоги
+                // архива
+                if (entry.isDirectory()) {
+                    nextFile.mkdir();
+                } else {
+                    // Создаем все родительские каталоги
+                    new File(nextFile.getParent()).mkdirs();
+                    // Записываем содержимое файла
+                    try (FileOutputStream fileOutputStream = new FileOutputStream(nextFile)) {
+                        copyData(zipInputStream, fileOutputStream);
+                    }
+                }
+                entry = zipInputStream.getNextEntry();
+            }
+        }
     }
 
     private void addNewZipEntry(ZipOutputStream zipOutputStream, Path filePath, Path fileName) throws Exception {
