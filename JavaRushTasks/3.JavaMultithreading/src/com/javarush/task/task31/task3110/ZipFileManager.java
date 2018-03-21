@@ -6,6 +6,7 @@ import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -78,30 +79,37 @@ public class ZipFileManager {
     }
 
     public void extractAll(Path outputFolder) throws Exception {
-        if (Files.notExists(zipFile) || !Files.isRegularFile(zipFile))
+        if (!Files.isRegularFile(zipFile))
             throw new WrongZipFileException();
 
-        try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(zipFile.toString()))) {
-            ZipEntry entry = zipInputStream.getNextEntry();
-            String nextFileName;
-            while (entry != null) {
-                nextFileName = entry.getName();
-                File nextFile = new File(outputFolder + File.separator + nextFileName);
-                // Если мы имеем дело с каталогом - надо его создать. Если
-                // этого не сделать, то не будут созданы пустые каталоги
-                // архива
-                if (entry.isDirectory()) {
-                    nextFile.mkdir();
+        Path path = Paths.get(outputFolder.toString());
+        while (path != null) {
+            if (Files.notExists(path)) {
+                Files.createDirectories(path);
+                path = path.getParent();
+            } else
+                break;
+        }
+
+        try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
+            ZipEntry zipEntry = zipInputStream.getNextEntry();
+
+            Path nextPatch;
+            while (zipEntry != null) {
+                nextPatch = outputFolder.resolve(zipEntry.getName());
+
+                if (zipEntry.isDirectory()) {
+                    Files.createDirectory(nextPatch);
                 } else {
-                    // Создаем все родительские каталоги
-                    new File(nextFile.getParent()).mkdirs();
-                    // Записываем содержимое файла
-                    try (FileOutputStream fileOutputStream = new FileOutputStream(nextFile)) {
-                        copyData(zipInputStream, fileOutputStream);
+                    if (Files.notExists(nextPatch.getParent()))
+                        Files.createDirectories(nextPatch.getParent());
+                    try (OutputStream outputStream = Files.newOutputStream(nextPatch)) {
+                        copyData(zipInputStream, outputStream);
                     }
                 }
-                entry = zipInputStream.getNextEntry();
+                zipEntry = zipInputStream.getNextEntry();
             }
+            zipInputStream.closeEntry();
         }
     }
 
