@@ -19,6 +19,6 @@ public class ZipRemoveCommand extends ZipCommand {
 
         zipFileManager.removeFile(removeFilePath);
 
-        ConsoleHelper.writeMessage("Файл из архива был удален был распакован.");
+        ConsoleHelper.writeMessage("Файл из архива был удален.");
     }
 }

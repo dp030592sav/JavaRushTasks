@@ -4,13 +4,13 @@ import com.javarush.task.task31.task3110.exception.PathIsNotFoundException;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
 import java.io.ByteArrayOutputStream;
-import java.io.Console;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -87,7 +87,7 @@ public class ZipFileManager {
         }
     }
 
-    void removeFiles(List<Path> pathList) throws Exception {
+    public void removeFiles(List<Path> pathList) throws Exception {
         // Проверяем существует ли zip файл
         if (!Files.isRegularFile(zipFile)) {
             throw new WrongZipFileException();
@@ -95,28 +95,30 @@ public class ZipFileManager {
 
         Path tempFile = Files.createTempFile(null, null);
 
-        try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
+        try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile));
+             ZipOutputStream zipOutputStream = new ZipOutputStream(Files.newOutputStream(tempFile))) {
+
             // Проходимся по содержимому zip потока (файла)
             ZipEntry zipEntry = zipInputStream.getNextEntry();
 
             while (zipEntry != null) {
-                String fileName = zipEntry.getName();
-                Path fileFullName = zipFile.resolve(fileName);
+                Path archivedFile = Paths.get(zipEntry.getName());
 
-                if (pathList.contains(fileFullName))
-                    ConsoleHelper.writeMessage(String.format("Удаление файла с именем %s", fileName));
-                else
-                    try (ZipOutputStream zipOutputStream = new ZipOutputStream(Files.newOutputStream(tempFile))) {
-                        addNewZipEntry(zipOutputStream, fileFullName.getParent(), fileFullName.getFileName());
-//                        zipOutputStream.
-//                        copyData(zipInputStream, zipOutputStream);
-//                        zipOutputStream.closeEntry();
-                    }
+                if (pathList.contains(archivedFile)) {
+                    ConsoleHelper.writeMessage(String.format("Удаление файла с именем %s", archivedFile.toString()));
+                } else {
+                    String fileName = zipEntry.getName();
+                    zipOutputStream.putNextEntry(new ZipEntry(fileName));
+
+                    copyData(zipInputStream, zipOutputStream);
+
+                    zipOutputStream.closeEntry();
+                    zipOutputStream.closeEntry();
+                }
                 zipEntry = zipInputStream.getNextEntry();
             }
         }
-
-        Files.move(tempFile, zipFile);
+        Files.move(tempFile, zipFile, StandardCopyOption.REPLACE_EXISTING);
     }
 
     public void removeFile(Path path) throws Exception {
