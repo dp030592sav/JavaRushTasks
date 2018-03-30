@@ -4633,3 +4633,17 @@ java.lang.Exception
 2018-03-30 11:17:46 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
 2018-03-30 11:17:50 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
 2018-03-30 11:18:50 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-03-30 11:19:46 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-03-30 11:19:46 INFO  ApacheHttpClient.getFilteredTasks(318) - responseCode = 200
+2018-03-30 11:19:50 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-03-30 11:19:59 INFO  ApacheHttpClient.getTaskTemplateInfo(335) - responseCode = 200
+2018-03-30 11:20:00 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-03-30 11:20:00 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-03-30 11:20:00 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-03-30 11:20:00 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-03-30 11:20:00 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-03-30 11:20:08 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-03-30 11:20:08 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-03-30 11:20:09 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-03-30 11:20:09 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-03-30 11:20:09 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
