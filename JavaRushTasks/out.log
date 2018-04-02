@@ -4842,3 +4842,34 @@ java.lang.Exception
 2018-04-02 11:34:03 INFO  ApacheHttpClient.testConnection(196) - result = true
 2018-04-02 11:34:03 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
 2018-04-02 11:34:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:34:44 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-04-02 11:34:44 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-04-02 11:34:44 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-04-02 11:34:44 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-04-02 11:34:44 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 11:35:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:36:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:37:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:38:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:39:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:40:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:41:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:41:22 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 11:41:22 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 11:41:23 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
+2018-04-02 11:41:25 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-04-02 11:42:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:42:27 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 11:42:27 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
+2018-04-02 11:43:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:44:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
+2018-04-02 11:44:30 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 11:44:30 WARN  JavaRushUtil.getCurrentTask(68) - Ошибка получения ключа задачи.
+2018-04-02 11:44:30 WARN  JavaRushUtil.getCurrentDirectory(99) - Ошибка получения текущей директории.
+2018-04-02 11:44:30 WARN  JavaRushUtil.getCurrentDirectory(99) - Ошибка получения текущей директории.
+2018-04-02 11:44:31 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
+2018-04-02 11:44:31 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
+2018-04-02 11:44:31 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 11:44:34 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-04-02 11:44:34 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
+2018-04-02 11:45:08 INFO  ApacheHttpClient.sendEvent(464) - responseCode = 200
