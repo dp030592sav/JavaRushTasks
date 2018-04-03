@@ -4931,3 +4931,35 @@ java.lang.Exception
 2018-04-02 12:00:15 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
 2018-04-02 12:00:15 INFO  ApacheHttpClient.testConnection(196) - result = true
 2018-04-02 12:00:15 INFO  ApacheHttpClient.getWebResourceAsStream(431) - responseCode = 200
+2018-04-02 13:03:18 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+2018-04-02 13:03:18 INFO  JavaRushTasksProjectComponent.projectOpened(69) - ---------- Version 3.16 ----------
+
+2018-04-02 13:03:18 INFO  ApacheHttpClient.createAsyncHttpClient(130) - Выбрано 1 прокси. Тип : DIRECT
+2018-04-02 13:03:18 INFO  ApacheHttpClient.<init>(88) - ApacheHttpClient проинстанциирован успешно.
+2018-04-02 13:03:19 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-04-02 13:03:19 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-04-02 13:03:19 INFO  ApacheHttpClient.login(220) - Ожидание ответа сервера.
+2018-04-02 13:03:19 INFO  ApacheHttpClient.login(224) - responseCode = 200
+2018-04-02 13:03:19 INFO  ApacheHttpClient.login(255) - JSESSIONID=D5AC258C1403F1785CB106F6AAD334FF
+2018-04-02 13:03:19 INFO  ApacheHttpClient.refreshUserInfo(283) - responseCode = 200
+2018-04-02 13:03:19 INFO  ApacheHttpClient.refreshUserInfo(289) - Информация о пользователе получена.
+2018-04-02 13:03:19 INFO  ApacheHttpClient.startGA(31) - GAService запущен.
+2018-04-02 13:03:19 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-04-02 13:03:24 INFO  JavaRushTasksProjectComponent.projectClosing(165) - ---------- Project JavaRushTasks closed ----------
+
+2018-04-02 13:03:24 INFO  ApacheHttpClient.getTask(416) - responseCode = 200
+2018-04-03 10:12:34 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+2018-04-03 10:12:34 INFO  JavaRushTasksProjectComponent.projectOpened(69) - ---------- Version 3.16 ----------
+
+2018-04-03 10:12:34 INFO  ApacheHttpClient.createAsyncHttpClient(130) - Выбрано 1 прокси. Тип : DIRECT
+2018-04-03 10:12:34 INFO  ApacheHttpClient.<init>(88) - ApacheHttpClient проинстанциирован успешно.
+2018-04-03 10:12:34 INFO  ApacheHttpClient.testConnection(188) - responseCode = 200
+2018-04-03 10:12:34 INFO  ApacheHttpClient.testConnection(196) - result = true
+2018-04-03 10:12:34 INFO  ApacheHttpClient.login(220) - Ожидание ответа сервера.
+2018-04-03 10:12:35 INFO  ApacheHttpClient.login(220) - Ожидание ответа сервера.
+2018-04-03 10:12:35 INFO  ApacheHttpClient.login(224) - responseCode = 200
+2018-04-03 10:12:35 INFO  ApacheHttpClient.login(255) - JSESSIONID=C932391A9D471A71E05290B556EFA6B9
+2018-04-03 10:12:35 INFO  ApacheHttpClient.refreshUserInfo(283) - responseCode = 200
+2018-04-03 10:12:35 INFO  ApacheHttpClient.refreshUserInfo(289) - Информация о пользователе получена.
+2018-04-03 10:12:35 INFO  ApacheHttpClient.startGA(31) - GAService запущен.
+2018-04-03 10:12:35 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
