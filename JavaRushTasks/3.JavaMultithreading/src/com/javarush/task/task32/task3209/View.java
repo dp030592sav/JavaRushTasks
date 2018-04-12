@@ -122,4 +122,27 @@ public class View extends JFrame implements ActionListener {
     public void resetUndo(){
         undoManager.discardAllEdits();
     }
+
+    // Возвращать true, если выбрана html вкладка.
+    public boolean isHtmlTabSelected(){
+        return tabbedPane.getSelectedIndex() == 0;
+    }
+
+    // Выбирает вкладку Html и сбрасывать все правки.
+    public void selectHtmlTab(){
+        tabbedPane.setSelectedIndex(0);
+        resetUndo();
+    }
+
+    // Устанавливает документ в панель редактирования.
+    public void update(){
+        htmlTextPane.setDocument(controller.getDocument());
+    }
+
+    // Показывает диалоговое окно с информацией о программе.
+    public void showAbout(){
+        JOptionPane jOptionPane = new JOptionPane();
+        String message = "Homemade HTML Editor";
+        JOptionPane.showMessageDialog(jOptionPane, message, "HTML Editor",JOptionPane.INFORMATION_MESSAGE);
+    }
 }
