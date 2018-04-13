@@ -44,9 +44,30 @@ public class View extends JFrame implements ActionListener {
         this.controller = controller;
     }
 
+    // Этот метод наследуется от интерфейса ActionListener
+    // и будет вызваться при выборе пунктов меню, у которых наше представление указано в виде слушателя событий.
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        switch (e.getActionCommand()){
+            case "Новый":
+                controller.createNewDocument();
+                break;
+            case "Открыть":
+                controller.openDocument();
+                break;
+            case "Сохранить":
+                controller.saveDocument();
+                break;
+            case "Сохранить как...":
+                controller.saveDocumentAs();
+                break;
+            case "Выход":
+                controller.exit();
+                break;
+            case "О программе":
+                showAbout();
+                break;
+        }
     }
 
     public void init() {
@@ -89,7 +110,13 @@ public class View extends JFrame implements ActionListener {
         controller.exit();
     }
 
+    // Этот метод вызывается, когда произошла смена выбранной вкладки.
     public void selectedTabChanged() {
+        if(tabbedPane.getSelectedIndex() == 0)
+            controller.setPlainText(plainTextPane.getText());
+        else if(tabbedPane.getSelectedIndex() == 1)
+            plainTextPane.setText(controller.getPlainText());
+        resetUndo();
     }
 
     public boolean canUndo() {
@@ -142,7 +169,6 @@ public class View extends JFrame implements ActionListener {
     // Показывает диалоговое окно с информацией о программе.
     public void showAbout(){
         JOptionPane jOptionPane = new JOptionPane();
-        String message = "Homemade HTML Editor";
-        JOptionPane.showMessageDialog(jOptionPane, message, "HTML Editor",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(jOptionPane, "Homemade HTML Editor", "HTML Editor",JOptionPane.INFORMATION_MESSAGE);
     }
 }
