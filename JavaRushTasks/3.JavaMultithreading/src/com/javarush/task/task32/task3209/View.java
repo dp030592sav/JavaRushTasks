@@ -77,7 +77,7 @@ public class View extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // инициализация панели меню.
+    // Инициализация панели меню.
     public void initMenuBar() {
         JMenuBar jMenuBar = new JMenuBar();
         MenuHelper.initFileMenu(this, jMenuBar);
@@ -90,7 +90,7 @@ public class View extends JFrame implements ActionListener {
         getContentPane().add(jMenuBar, BorderLayout.NORTH);
     }
 
-    // инициализация панели редактора.
+    // Инициализация панели редактора.
     public void initEditor() {
         htmlTextPane.setContentType("text/html");
         tabbedPane.addTab("HTML", new JScrollPane(htmlTextPane));
@@ -100,12 +100,14 @@ public class View extends JFrame implements ActionListener {
         getContentPane().add(tabbedPane, BorderLayout.CENTER);
     }
 
+    // Инициализация Gui.
     public void initGui() {
         initMenuBar();
         initEditor();
         pack();
     }
 
+    // Метод для закрития программы.
     public void exit() {
         controller.exit();
     }
@@ -119,15 +121,17 @@ public class View extends JFrame implements ActionListener {
         resetUndo();
     }
 
+    // Проверяет возможность отмены последнего действия.
     public boolean canUndo() {
         return undoManager.canUndo();
     }
 
+    // Проверяет возможность возврата ранее отмененного действия.
     public boolean canRedo() {
         return undoManager.canRedo();
     }
 
-    // отменяет последнее действие.
+    // Отменяет последнее действие.
     public void undo(){
         try{
             undoManager.undo();
@@ -136,7 +140,7 @@ public class View extends JFrame implements ActionListener {
         }
     }
 
-    // возвращает ранее отмененное действие.
+    // Возвращает ранее отмененное действие.
     public void redo(){
         try{
             undoManager.redo();
