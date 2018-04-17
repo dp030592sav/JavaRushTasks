@@ -1,11 +1,28 @@
 package com.javarush.task.task32.task3209;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import java.io.*;
+
+/*
+Твой html редактор готов!
+Ты научился:
+- Создавать приложения с графическим интерфейсом.
+- Работать с диалоговыми окнами.
+- Пользоваться классами из библиотеки Swing.
+- Реализовывать взаимодействие компонентов программы с помощью событий, слушателей, действий.
+- Усилил свои знания в области MVC.
+
+Что можно улучшить в разработанном редакторе:
+- Добавить панель инструментов, повторяющую функционал меню.
+- Добавить подсветку html тегов на второй вкладке.
+- Добавить возможность загрузки документа из Интернет.
+- Расширить возможности редактора (вставка картинки, ссылки и т.д.)
+
+Поздравляю, так держать!
+*/
 
 public class Controller {
     private View view;
