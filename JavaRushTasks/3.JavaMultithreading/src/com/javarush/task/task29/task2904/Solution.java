@@ -15,7 +15,7 @@ public class Solution {
     }
 
     Number getValueByIndex(int index) {
-        if(index >= 0 && index < array.length)
+        if (index >= 0 && index < array.length)
             return Integer.valueOf(array[index]);
         else
             return new Double(-1);
