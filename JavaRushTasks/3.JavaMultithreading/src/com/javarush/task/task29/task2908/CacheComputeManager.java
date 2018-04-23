@@ -34,7 +34,12 @@ public class CacheComputeManager<Argument, Value> implements Computable<Argument
     }
 
     public FutureTask<Value> createFutureTaskForNewArgumentThatHaveToComputeValue(final Argument arg) {
-
-        return null;
+        FutureTask<Value> futureTask = new FutureTask<Value>(new Callable() {
+            @Override
+            public Object call() throws Exception {
+                return computable.compute(arg);
+            }
+        });
+        return futureTask;
     }
 }
