@@ -14,6 +14,7 @@ public class Order {
     public Order(Tablet tablet) throws IOException {
         this.tablet = tablet;
         dishes = ConsoleHelper.getAllDishesForOrder();
+        ConsoleHelper.writeMessage(this.toString());
     }
 
     @Override
