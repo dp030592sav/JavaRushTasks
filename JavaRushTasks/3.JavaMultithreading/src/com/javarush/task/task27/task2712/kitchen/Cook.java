@@ -19,7 +19,7 @@ public class Cook extends Observable implements Observer {
 
     @Override
     public void update(Observable o, Object order) {
-        ConsoleHelper.writeMessage(String.format("Start cooking - %s", order));
+        ConsoleHelper.writeMessage(String.format("Start cooking - %s, cooking time %dmin", order, ((Order) order).getTotalCookingTime()));
         setChanged();
         notifyObservers(order);
     }

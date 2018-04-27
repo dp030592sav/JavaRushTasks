@@ -22,4 +22,12 @@ public class Order {
         return dishes.size() != 0 ?
                 String.format("Your order: %s of %s", Arrays.toString(dishes.toArray()), tablet) : "";
     }
+
+    public int getTotalCookingTime(){
+        return dishes.stream().mapToInt((s)->s.getDuration()).sum();
+    }
+
+    public boolean isEmpty(){
+        return dishes.isEmpty();
+    }
 }
