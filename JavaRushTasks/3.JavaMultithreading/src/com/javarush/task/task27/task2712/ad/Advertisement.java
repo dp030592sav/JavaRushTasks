@@ -12,6 +12,7 @@ public class Advertisement {
     private int hits;
     // продолжительность в секундах
     private int duration;
+    // стоимости одного показа рекламного объявления в копейках
     private long amountPerOneDisplaying;
 
     public Advertisement(Object content, String name, long initialAmount, int hits, int duration) {
@@ -20,7 +21,8 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        this.amountPerOneDisplaying = initialAmount / hits;
+        if (hits != 0)
+            this.amountPerOneDisplaying = initialAmount / hits;
     }
 
     public String getName() {
@@ -35,8 +37,12 @@ public class Advertisement {
         return amountPerOneDisplaying;
     }
 
-    public void revalidate(){
-        if(hits == 0)
+    public int getHits() {
+        return hits;
+    }
+
+    public void revalidate() {
+        if (hits == 0)
             throw new UnsupportedOperationException();
         else
             hits--;
