@@ -1,7 +1,7 @@
 package com.javarush.task.task27.task2712.ad;
 
 // рекламное объявление
-public class Advertisement {
+public class Advertisement implements Cloneable{
     // видео
     private Object content;
     // имя/название
