@@ -31,7 +31,7 @@ public class AdvertisementManager {
             }
         });
 
-        List<Advertisement> selectedVideos = selectionVideos(storage.list(), 0, timeSeconds);
+        List<Advertisement> selectedVideos = selectionVideos(advertisements, 0, timeSeconds);
 
         for (Advertisement i : selectedVideos) {
             i.revalidate();
@@ -41,9 +41,9 @@ public class AdvertisementManager {
     }
 
     private List<Advertisement> selectionVideos(List<Advertisement> availableVideos, int index, int remainderOfTime) {
-        if (remainderOfTime == 0 || index > availableVideos.size() - 1)
+        if (remainderOfTime == 0 || index >= availableVideos.size())
             return new ArrayList<Advertisement>();
-        else if (availableVideos.get(index).getDuration() / 60 > remainderOfTime || availableVideos.get(index).getHits() <= 0)
+        else if (availableVideos.get(index).getDuration() > remainderOfTime || availableVideos.get(index).getHits() <= 0)
             return selectionVideos(availableVideos, index + 1, remainderOfTime);
         else {
             List<Advertisement> selectedVideos = new ArrayList<>();
