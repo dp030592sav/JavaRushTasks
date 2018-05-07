@@ -27,6 +27,14 @@ public class Order {
         return dishes.stream().mapToInt((s)->s.getDuration()).sum();
     }
 
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public Tablet getTablet() {
+        return tablet;
+    }
+
     public boolean isEmpty(){
         return dishes.isEmpty();
     }

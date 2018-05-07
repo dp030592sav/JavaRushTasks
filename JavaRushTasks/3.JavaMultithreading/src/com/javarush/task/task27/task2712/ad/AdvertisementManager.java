@@ -1,6 +1,9 @@
 package com.javarush.task.task27.task2712.ad;
 
 import com.javarush.task.task27.task2712.ConsoleHelper;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.NoAvailableVideoEventDataRow;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,6 +35,14 @@ public class AdvertisementManager {
         });
 
         List<Advertisement> selectedVideos = selectionVideos(advertisements, 0, timeSeconds);
+
+        long amount = 0;
+        int totalDuration = 0;
+        for (Advertisement i : selectedVideos) {
+            amount += i.getAmountPerOneDisplaying();
+            totalDuration += i.getDuration();
+        }
+        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(selectedVideos, amount, totalDuration));
 
         for (Advertisement i : selectedVideos) {
             i.revalidate();
