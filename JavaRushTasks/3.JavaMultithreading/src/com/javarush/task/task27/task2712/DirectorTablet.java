@@ -3,17 +3,15 @@ package com.javarush.task.task27.task2712;
 import com.javarush.task.task27.task2712.statistic.StatisticManager;
 import com.javarush.task.task27.task2712.statistic.event.CookedOrderEventDataRow;
 import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
-import com.sun.org.apache.xpath.internal.operations.Number;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class DirectorTablet {
     // сумма заработанная на рекламе, сгруппированная по дням
     public void printAdvertisementProfit() {
-        List<VideoSelectedEventDataRow> videosSelected = StatisticManager.getInstance().getProfit();
+        List<VideoSelectedEventDataRow> videosSelected = StatisticManager.getInstance().getProfitReport();
 
         Collections.sort(videosSelected, new Comparator<VideoSelectedEventDataRow>() {
             @Override
@@ -32,17 +30,15 @@ public class DirectorTablet {
 
     // загрузка (рабочее время) повара, сгруппированная по дням
     public void printCookWorkloading() {
-        List<CookedOrderEventDataRow> cooksTime = StatisticManager.getInstance().getCooksTime();
+        Map<Date, Map<String, Integer>> cooksReport = StatisticManager.getInstance().getCooksReport();
 
-        Collections.sort(cooksTime, new Comparator<CookedOrderEventDataRow>() {
-            @Override
-            public int compare(CookedOrderEventDataRow o1, CookedOrderEventDataRow o2) {
-                return o2.getDate().compareTo(o1.getDate());
+        for (Map.Entry<Date, Map<String, Integer>> i : cooksReport.entrySet()) {
+            ConsoleHelper.writeMessage(new SimpleDateFormat("dd-MMM-yyyy").format(i.getKey()));
+
+            for (Map.Entry<String, Integer> j : i.getValue().entrySet()) {
+                ConsoleHelper.writeMessage(String.format("%s - %d min", j.getKey(), j.getValue()));
             }
-        });
-
-        for ( i : cooksTime) {
-
+            ConsoleHelper.writeMessage("");
         }
     }
 
