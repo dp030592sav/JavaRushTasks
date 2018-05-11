@@ -32,18 +32,36 @@ public class StatisticManager {
         cooks.add(cook);
     }
 
-    public List<VideoSelectedEventDataRow> getProfitReport() {
-        List<VideoSelectedEventDataRow> res = new ArrayList<>();
+    public Map<Date, Double> getProfitReport() {
+        Map<Date, Double> result = new TreeMap<>(Collections.reverseOrder());
 
-        for (Map.Entry<EventType, List<EventDataRow>> i : statisticStorage.getStorage().entrySet()) {
-            if (i.getKey() == EventType.SELECTED_VIDEOS)
-                for (EventDataRow j : i.getValue()) {
-                    res.add((VideoSelectedEventDataRow) j);
-                }
+        for (EventDataRow i : statisticStorage.getStorage().get(EventType.SELECTED_VIDEOS)) {
+            VideoSelectedEventDataRow videoSelectedEventDataRow = (VideoSelectedEventDataRow) i;
+            Date fullDate = videoSelectedEventDataRow.getDate();
+            Date date = new Date(fullDate.getYear(), fullDate.getMonth(), fullDate.getDay());
+            Double amount = new BigDecimal(videoSelectedEventDataRow.getAmount()).doubleValue() / 100;
+
+            if (result.containsKey(date))
+                result.put(date, result.get(date) + amount);
+            else
+                result.put(date, amount);
         }
 
-        return res;
+        return result;
     }
+
+//    public List<VideoSelectedEventDataRow> getProfitReport() {
+//        List<VideoSelectedEventDataRow> res = new ArrayList<>();
+//
+//        for (Map.Entry<EventType, List<EventDataRow>> i : statisticStorage.getStorage().entrySet()) {
+//            if (i.getKey() == EventType.SELECTED_VIDEOS)
+//                for (EventDataRow j : i.getValue()) {
+//                    res.add((VideoSelectedEventDataRow) j);
+//                }
+//        }
+//
+//        return res;
+//    }
 
     public Map<Date, Map<String, Integer>> getCooksReport() {
         Map<Date, Map<String, Integer>> result = new TreeMap<>(Collections.reverseOrder());

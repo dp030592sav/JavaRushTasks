@@ -11,21 +11,30 @@ import java.util.*;
 public class DirectorTablet {
     // сумма заработанная на рекламе, сгруппированная по дням
     public void printAdvertisementProfit() {
-        List<VideoSelectedEventDataRow> videosSelected = StatisticManager.getInstance().getProfitReport();
+        Map<Date, Double> videosSelected = StatisticManager.getInstance().getProfitReport();
 
-        Collections.sort(videosSelected, new Comparator<VideoSelectedEventDataRow>() {
-            @Override
-            public int compare(VideoSelectedEventDataRow o1, VideoSelectedEventDataRow o2) {
-                return o2.getDate().compareTo(o1.getDate());
-            }
-        });
-
-        long total = 0;
-        for (VideoSelectedEventDataRow i : videosSelected) {
-            total += i.getAmount();
-            System.out.println(String.format("%s - %d", new SimpleDateFormat("dd-MMM-yyyy").format(i.getDate()), i.getAmount()));
+        Double total = 0.0;
+        for (Map.Entry<Date, Double> i : videosSelected.entrySet()) {
+            total += i.getValue();
+            System.out.println(String.format("%s - %s", new SimpleDateFormat("dd-MMM-yyyy").format(i.getKey()), i.getValue()));
         }
-        System.out.println(String.format("Total - %d", total));
+        System.out.println(String.format("Total - %s", total));
+
+//        List<VideoSelectedEventDataRow> videosSelected = StatisticManager.getInstance().getProfitReport();
+//
+//        Collections.sort(videosSelected, new Comparator<VideoSelectedEventDataRow>() {
+//            @Override
+//            public int compare(VideoSelectedEventDataRow o1, VideoSelectedEventDataRow o2) {
+//                return o2.getDate().compareTo(o1.getDate());
+//            }
+//        });
+//
+//        long total = 0;
+//        for (VideoSelectedEventDataRow i : videosSelected) {
+//            total += i.getAmount();
+//            System.out.println(String.format("%s - %d", new SimpleDateFormat("dd-MMM-yyyy").format(i.getDate()), i.getAmount()));
+//        }
+//        System.out.println(String.format("Total - %d", total));
     }
 
     // загрузка (рабочее время) повара, сгруппированная по дням
