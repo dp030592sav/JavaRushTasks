@@ -38,7 +38,7 @@ public class StatisticManager {
         for (EventDataRow i : statisticStorage.getStorage().get(EventType.SELECTED_VIDEOS)) {
             VideoSelectedEventDataRow videoSelectedEventDataRow = (VideoSelectedEventDataRow) i;
             Date fullDate = videoSelectedEventDataRow.getDate();
-            Date date = new Date(fullDate.getYear(), fullDate.getMonth(), fullDate.getDay());
+            Date date = new Date(fullDate.getYear(), fullDate.getMonth(), fullDate.getDate());
             Double amount = new BigDecimal(videoSelectedEventDataRow.getAmount()).doubleValue() / 100;
 
             if (result.containsKey(date))
@@ -50,19 +50,6 @@ public class StatisticManager {
         return result;
     }
 
-//    public List<VideoSelectedEventDataRow> getProfitReport() {
-//        List<VideoSelectedEventDataRow> res = new ArrayList<>();
-//
-//        for (Map.Entry<EventType, List<EventDataRow>> i : statisticStorage.getStorage().entrySet()) {
-//            if (i.getKey() == EventType.SELECTED_VIDEOS)
-//                for (EventDataRow j : i.getValue()) {
-//                    res.add((VideoSelectedEventDataRow) j);
-//                }
-//        }
-//
-//        return res;
-//    }
-
     public Map<Date, Map<String, Integer>> getCooksReport() {
         Map<Date, Map<String, Integer>> result = new TreeMap<>(Collections.reverseOrder());
         List<EventDataRow> eventDataRowList = statisticStorage.getStorage().get(EventType.COOKED_ORDER);
@@ -70,7 +57,7 @@ public class StatisticManager {
         for (EventDataRow i : eventDataRowList) {
             CookedOrderEventDataRow cookedOrderEventDataRow = (CookedOrderEventDataRow) i;
             Date fullDate = cookedOrderEventDataRow.getDate();
-            Date date = new Date(fullDate.getYear(), fullDate.getMonth(), fullDate.getDay());
+            Date date = new Date(fullDate.getYear(), fullDate.getMonth(), fullDate.getDate());
 
             String cookName = cookedOrderEventDataRow.getCookName();
             int addTime = new BigDecimal(((double) cookedOrderEventDataRow.getTime()) / 60).setScale(0, RoundingMode.UP).intValue();

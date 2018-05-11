@@ -1,7 +1,7 @@
 package com.javarush.task.task27.task2712.ad;
 
 // рекламное объявление
-public class Advertisement implements Cloneable{
+public class Advertisement implements Cloneable {
     // видео
     private Object content;
     // имя/название
@@ -42,9 +42,8 @@ public class Advertisement implements Cloneable{
     }
 
     public void revalidate() {
-        if (hits == 0)
-            throw new UnsupportedOperationException();
-        else
-            hits--;
+        if (hits <= 0)
+            throw new NoVideoAvailableException();
+        hits--;
     }
 }
