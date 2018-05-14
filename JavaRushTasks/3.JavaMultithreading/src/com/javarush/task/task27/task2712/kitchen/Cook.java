@@ -23,7 +23,7 @@ public class Cook extends Observable implements Observer {
     public void update(Observable o, Object object) {
         Order order = (Order) object;
         ConsoleHelper.writeMessage(String.format("Start cooking - %s, cooking time %dmin", order, order.getTotalCookingTime()));
-        StatisticManager.getInstance().register(new CookedOrderEventDataRow(order.getTablet().toString(), name, order.getTotalCookingTime(), order.getDishes()));
+        StatisticManager.getInstance().register(new CookedOrderEventDataRow(order.getTablet().toString(), name, order.getTotalCookingTime() * 60, order.getDishes()));
         setChanged();
         notifyObservers(order);
     }

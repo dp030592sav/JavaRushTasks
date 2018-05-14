@@ -16,9 +16,9 @@ public class DirectorTablet {
         Double total = 0.0;
         for (Map.Entry<Date, Double> i : videosSelected.entrySet()) {
             total += i.getValue();
-            System.out.println(String.format("%s - %s", new SimpleDateFormat("dd-MMM-yyyy").format(i.getKey()), i.getValue()));
+            System.out.println(String.format("%s - %s", new SimpleDateFormat("dd-MMM-yyyy").format(i.getKey()), i.getValue() / 100));
         }
-        System.out.println(String.format("Total - %s", total));
+        System.out.println(String.format("Total - %s", total / 100));
     }
 
     // загрузка (рабочее время) повара, сгруппированная по дням

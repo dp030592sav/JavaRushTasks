@@ -39,7 +39,7 @@ public class StatisticManager {
             VideoSelectedEventDataRow videoSelectedEventDataRow = (VideoSelectedEventDataRow) i;
             Date fullDate = videoSelectedEventDataRow.getDate();
             Date date = new Date(fullDate.getYear(), fullDate.getMonth(), fullDate.getDate());
-            Double amount = new BigDecimal(videoSelectedEventDataRow.getAmount()).doubleValue() / 100;
+            Double amount = new Double(videoSelectedEventDataRow.getAmount());
 
             if (result.containsKey(date))
                 result.put(date, result.get(date) + amount);
