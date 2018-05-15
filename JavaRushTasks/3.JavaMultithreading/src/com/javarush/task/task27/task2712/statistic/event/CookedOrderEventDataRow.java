@@ -20,12 +20,21 @@ public class CookedOrderEventDataRow implements EventDataRow{
     // текущее время
     Date currentDate;
 
+//    //!!!!
+//    private static int count = 0;
+//    //!!!!
+
     public CookedOrderEventDataRow(String tabletName, String cookName, int cookingTimeSeconds, List<Dish> cookingDishs) {
         this.tabletName = tabletName;
         this.cookName = cookName;
         this.cookingTimeSeconds = cookingTimeSeconds;
         this.cookingDishs = cookingDishs;
         this.currentDate = new Date();
+
+//        //!!!!
+//        this.currentDate.setDate(this.currentDate.getDate() + count++);
+//        this.currentDate.setMonth(this.currentDate.getMonth() + count++);
+//        //!!!!
     }
 
     public String getCookName() {
