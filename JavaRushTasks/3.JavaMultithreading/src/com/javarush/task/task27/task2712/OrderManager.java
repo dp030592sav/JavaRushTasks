@@ -7,8 +7,19 @@ import java.util.Observer;
 import java.util.concurrent.LinkedBlockingQueue;
 
 // Observer(слушатель) для планшетов
-public class OrderManager  implements Observer {
-    LinkedBlockingQueue<Order> orderQueue = new LinkedBlockingQueue<>();
+public class OrderManager implements Observer {
+    private LinkedBlockingQueue<Order> orderQueue = new LinkedBlockingQueue<>();
+
+    public OrderManager() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+        thread.setDaemon(true);
+        thread.start();
+    }
 
     @Override
     public void update(Observable o, Object object) {

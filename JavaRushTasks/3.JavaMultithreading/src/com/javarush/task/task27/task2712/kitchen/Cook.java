@@ -9,9 +9,15 @@ import java.util.Observer;
 
 public class Cook extends Observable {
     private String name;
+    private boolean busy;
 
     public Cook(String name) {
         this.name = name;
+        this.busy = false;
+    }
+
+    public boolean isBusy() {
+        return busy;
     }
 
     @Override
@@ -20,9 +26,16 @@ public class Cook extends Observable {
     }
 
     public void startCookingOrder(Order order) {
+        busy = true;
         ConsoleHelper.writeMessage(String.format("Start cooking - %s, cooking time %dmin", order, order.getTotalCookingTime()));
+        try {
+            Thread.sleep(10 * order.getTotalCookingTime());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         StatisticManager.getInstance().register(new CookedOrderEventDataRow(order.getTablet().toString(), name, order.getTotalCookingTime() * 60, order.getDishes()));
         setChanged();
         notifyObservers(order);
+        busy = false;
     }
 }
