@@ -3,6 +3,7 @@ package com.javarush.task.task27.task2712.kitchen;
 import com.javarush.task.task27.task2712.Tablet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TestOrder extends Order {
 
@@ -12,10 +13,11 @@ public class TestOrder extends Order {
 
     @Override
     protected void initDishes() throws IOException {
-        int count = (int) (Math.random() * Dish.values().length) + 1;
+        dishes = new ArrayList<>();
+        int count = (int) (Math.random () * 5);
 
         for (int i = 0; i < count; i++) {
-            int index = (int) Math.random() * Dish.values().length;
+            int index = (int) (Math.random () *  Dish.values().length);
             dishes.add(Dish.values()[index]);
         }
     }
