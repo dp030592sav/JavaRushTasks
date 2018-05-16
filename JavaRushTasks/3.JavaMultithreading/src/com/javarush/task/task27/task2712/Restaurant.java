@@ -17,12 +17,15 @@ public class Restaurant {
         StatisticManager.getInstance().register(cook1);
         StatisticManager.getInstance().register(cook2);
 
+        // создание Observer(слушателя) для планшетов
+        OrderManager orderManager = new OrderManager();
+
         // создание планшетов и установка зависимостей Observer-Observable
         List<Tablet> tablets = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             Tablet tablet = new Tablet(i);
-            tablet.addObserver(cook1);
-            tablet.addObserver(cook2);
+            tablet.addObserver(orderManager);
+            tablet.addObserver(orderManager);
             tablets.add(tablet);
         }
 
