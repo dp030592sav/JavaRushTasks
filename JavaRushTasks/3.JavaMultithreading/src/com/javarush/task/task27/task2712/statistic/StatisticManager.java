@@ -13,27 +13,18 @@ import java.util.*;
 public class StatisticManager {
     private static volatile StatisticManager instance = null;
     private StatisticStorage statisticStorage = new StatisticStorage();
-    private Set<Cook> cooks = new HashSet<>();
 
     private StatisticManager() {
     }
 
-    public static StatisticManager getInstance() {
+    public synchronized static StatisticManager getInstance() {
         if (instance == null)
             instance = new StatisticManager();
         return instance;
     }
 
-    public Set<Cook> getCooks() {
-        return cooks;
-    }
-
     public void register(EventDataRow data) {
         statisticStorage.put(data);
-    }
-
-    public void register(Cook cook) {
-        cooks.add(cook);
     }
 
     public Map<Date, Double> getProfitReport() {
