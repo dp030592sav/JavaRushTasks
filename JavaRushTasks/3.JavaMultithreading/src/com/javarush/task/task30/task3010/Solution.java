@@ -4,7 +4,6 @@ package com.javarush.task.task30.task3010;
 Минимальное допустимое основание системы счисления
 */
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Solution {
