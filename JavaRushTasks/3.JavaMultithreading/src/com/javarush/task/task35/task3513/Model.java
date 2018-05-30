@@ -20,7 +20,7 @@ public class Model {
         resetGameTiles();
     }
 
-    // сдвиг в лево
+    // сдвиг влево
     public void left() {
         boolean isChanged = false;
         for (int i = 0; i < gameTiles.length; i++) {
@@ -29,6 +29,33 @@ public class Model {
         }
 
         if (isChanged) addTile();
+    }
+
+    // сдвиг вправо
+    public void right() {
+        rotate();
+        left();
+        rotate();
+        rotate();
+        rotate();
+    }
+
+    // сдвиг вверх
+    public void up() {
+        rotate();
+        rotate();
+        left();
+        rotate();
+        rotate();
+    }
+
+    // сдвиг вниз
+    public void down() {
+        rotate();
+        rotate();
+        rotate();
+        left();
+        rotate();
     }
 
     // позволяет начать/перезапустить игру
@@ -107,5 +134,20 @@ public class Model {
         compressTiles(tiles);
 
         return result;
+    }
+
+    // поаорот двухмерного массива на 90 градусов
+    // используеться в методах сдвигах
+    private void rotate() {
+        // копируем двемерный массив во временную переменную
+        Tile[][] CopyGameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+        for (int i = 0; i < gameTiles.length; i++)
+            for (int j = 0; j < gameTiles[i].length; j++)
+                CopyGameTiles[i][j] = gameTiles[i][j];
+
+        // поварачиваем массив
+        for (int i = 0; i < gameTiles.length; i++)
+            for (int j = 0; j < gameTiles[i].length; j++)
+                gameTiles[i][j] = CopyGameTiles[CopyGameTiles.length - 1 - j][i];
     }
 }
