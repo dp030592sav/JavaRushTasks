@@ -28,14 +28,14 @@ public class Model {
                 isChanged = true;
         }
 
-        if (isChanged) addTile();
+        if(isChanged) addTile();
     }
 
     // сдвиг вправо
     public void right() {
         rotate();
-        left();
         rotate();
+        left();
         rotate();
         rotate();
     }
@@ -44,17 +44,17 @@ public class Model {
     public void up() {
         rotate();
         rotate();
-        left();
         rotate();
+        left();
         rotate();
     }
 
     // сдвиг вниз
     public void down() {
         rotate();
-        rotate();
-        rotate();
         left();
+        rotate();
+        rotate();
         rotate();
     }
 
@@ -139,7 +139,7 @@ public class Model {
     // поаорот двухмерного массива на 90 градусов
     // используеться в методах сдвигах
     private void rotate() {
-        // копируем двемерный массив во временную переменную
+        // копируем двухмерный массив во временную переменную
         Tile[][] CopyGameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
         for (int i = 0; i < gameTiles.length; i++)
             for (int j = 0; j < gameTiles[i].length; j++)
