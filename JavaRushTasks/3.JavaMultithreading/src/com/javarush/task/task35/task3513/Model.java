@@ -20,6 +20,27 @@ public class Model {
         resetGameTiles();
     }
 
+    // getter для игрового поля
+    public Tile[][] getGameTiles() {
+        return gameTiles;
+    }
+
+    // позволяет начать/перезапустить игру
+    void resetGameTiles() {
+        score = 0;
+        maxTile = 0;
+
+        gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+
+        for (int i = 0; i < gameTiles.length; i++)
+            for (int j = 0; j < gameTiles[i].length; j++)
+                gameTiles[i][j] = new Tile();
+
+        // добавление двух случайных плиток в начале игры
+        addTile();
+        addTile();
+    }
+
     // сдвиг влево
     public void left() {
         boolean isChanged = false;
@@ -28,7 +49,7 @@ public class Model {
                 isChanged = true;
         }
 
-        if(isChanged) addTile();
+        if (isChanged) addTile();
     }
 
     // сдвиг вправо
@@ -58,20 +79,26 @@ public class Model {
         rotate();
     }
 
-    // позволяет начать/перезапустить игру
-    void resetGameTiles() {
-        score = 0;
-        maxTile = 0;
+    // определяет возможен ли ход в текущей позиции, или нет
+    public boolean canMove() {
+        if (getEmptyTiles().size() > 0)
+            return true;
 
-        gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+        for (int i = 0; i < gameTiles.length; i++) {
+            for (int j = 0; j < gameTiles[i].length - 1; j++) {
+                if (gameTiles[i][j].value == gameTiles[i][j + 1].value)
+                    return true;
+            }
+        }
 
-        for (int i = 0; i < gameTiles.length; i++)
-            for (int j = 0; j < gameTiles[i].length; j++)
-                gameTiles[i][j] = new Tile();
+        for (int i = 0; i < gameTiles.length; i++) {
+            for (int j = 0; j < gameTiles[i].length - 1; j++) {
+                if (gameTiles[j][i].value == gameTiles[j + 1][i].value)
+                    return true;
+            }
+        }
 
-        // добавление двух случайных плиток в начале игры
-        addTile();
-        addTile();
+        return false;
     }
 
     // будет смотреть какие плитки пустуют и менять вес одной из них
