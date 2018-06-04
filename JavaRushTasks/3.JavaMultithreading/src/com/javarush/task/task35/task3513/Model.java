@@ -1,7 +1,9 @@
 package com.javarush.task.task35.task3513;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 // будет содержать игровую логику и хранить игровое поле
 public class Model {
@@ -14,6 +16,12 @@ public class Model {
     int score;
     // максимальный вес плитки на игровом поле
     int maxTile;
+    // состояния предыдущие игрового поля
+    private Stack<Tile[][]> previousStates;
+    // состояния предыдущие счета
+    private Stack<Integer> previousScores;
+    // флаг используемый в механизме отмены последнего хода
+    private boolean isSaveNeeded = true;
 
     // конструктор без параметров инициализирующий игровое поле и заполняющий его пустыми плитками
     public Model() {
@@ -39,10 +47,18 @@ public class Model {
         // добавление двух случайных плиток в начале игры
         addTile();
         addTile();
+
+        // обновления стеков, которые служат для отмены последнего хода
+        previousStates = new Stack<>();
+        previousScores = new Stack<>();
     }
 
     // сдвиг влево
     public void left() {
+        // сохранения состояния игры, для подальшей возможности отмены хода
+        if (isSaveNeeded)
+            saveState(gameTiles);
+
         boolean isChanged = false;
         for (int i = 0; i < gameTiles.length; i++) {
             if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i]))
@@ -54,6 +70,9 @@ public class Model {
 
     // сдвиг вправо
     public void right() {
+        // сохранения состояния игры, для подальшей возможности отмены хода
+        saveState(gameTiles);
+
         rotate();
         rotate();
         left();
@@ -63,6 +82,9 @@ public class Model {
 
     // сдвиг вверх
     public void up() {
+        // сохранения состояния игры, для подальшей возможности отмены хода
+        saveState(gameTiles);
+        
         rotate();
         rotate();
         rotate();
@@ -72,6 +94,9 @@ public class Model {
 
     // сдвиг вниз
     public void down() {
+        // сохранения состояния игры, для подальшей возможности отмены хода
+        saveState(gameTiles);
+
         rotate();
         left();
         rotate();
@@ -176,5 +201,37 @@ public class Model {
         for (int i = 0; i < gameTiles.length; i++)
             for (int j = 0; j < gameTiles[i].length; j++)
                 gameTiles[i][j] = CopyGameTiles[CopyGameTiles.length - 1 - j][i];
+    }
+
+    // будет сохранять текущее игровое состояние и счет в стеки
+    private void saveState(Tile[][] tiles) {
+        Tile[][] copyTiles = new Tile[tiles.length][tiles[0].length];
+        for (int i = 0; i < gameTiles.length; i++)
+            for (int j = 0; j < gameTiles[i].length; j++)
+                copyTiles[i][j] = new Tile(tiles[i][j].value);
+
+        previousStates.push(copyTiles);
+        previousScores.push(score);
+        isSaveNeeded = false;
+    }
+
+    // будет устанавливать текущее игровое состояние равным последнему находящемуся в стеках
+    public void rollback() {
+        if (!previousStates.isEmpty() && !previousScores.isEmpty()) {
+            gameTiles = previousStates.pop();
+            score = previousScores.pop();
+        }
+    }
+
+    // случайный ход
+    public void randomMove(){
+        int n = ((int) (Math.random() * 100)) % 4;
+
+        switch (n){
+            case 0: left(); break;
+            case 1: up(); break;
+            case 2: right(); break;
+            case 3: down(); break;
+        }
     }
 }
