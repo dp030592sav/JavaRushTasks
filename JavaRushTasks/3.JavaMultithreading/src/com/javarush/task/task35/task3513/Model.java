@@ -1,9 +1,6 @@
 package com.javarush.task.task35.task3513;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 // будет содержать игровую логику и хранить игровое поле
 public class Model {
@@ -84,7 +81,7 @@ public class Model {
     public void up() {
         // сохранения состояния игры, для подальшей возможности отмены хода
         saveState(gameTiles);
-        
+
         rotate();
         rotate();
         rotate();
@@ -224,14 +221,62 @@ public class Model {
     }
 
     // случайный ход
-    public void randomMove(){
+    public void randomMove() {
         int n = ((int) (Math.random() * 100)) % 4;
 
-        switch (n){
-            case 0: left(); break;
-            case 1: up(); break;
-            case 2: right(); break;
-            case 3: down(); break;
+        switch (n) {
+            case 0:
+                left();
+                break;
+            case 1:
+                up();
+                break;
+            case 2:
+                right();
+                break;
+            case 3:
+                down();
+                break;
         }
+    }
+
+    // будет возвращать true, в случае, если вес плиток в массиве gameTiles отличается от
+    // веса плиток в верхнем массиве стека previousStates
+    public boolean hasBoardChanged() {
+
+        if (!previousStates.isEmpty()) {
+            Tile[][] previousState = previousStates.peek();
+            for (int i = 0; i < gameTiles.length; i++)
+                for (int j = 0; j < gameTiles[i].length; j++)
+                    if (gameTiles[i][j].value != previousState[i][j].value)
+                        return true;
+        }
+
+        return false;
+    }
+
+    // возвращает объект типа MoveEfficiency описывающий эффективность переданного хода-
+    public MoveEfficiency getMoveEfficiency(Move move) {
+        MoveEfficiency moveEfficiency;
+        move.move();
+
+        if (hasBoardChanged())
+            moveEfficiency = new MoveEfficiency(getEmptyTiles().size(), score, move);
+        else
+            moveEfficiency = new MoveEfficiency(-1, 0, move);
+
+        rollback();
+
+        return moveEfficiency;
+    }
+
+    public void autoMove() {
+        PriorityQueue<MoveEfficiency> queue = new PriorityQueue(4, Collections.reverseOrder());
+        queue.add(getMoveEfficiency(this::left));
+        queue.add(getMoveEfficiency(this::right));
+        queue.add(getMoveEfficiency(this::up));
+        queue.add(getMoveEfficiency(this::down));
+        Move move = queue.peek().getMove();
+        move.move();
     }
 }
