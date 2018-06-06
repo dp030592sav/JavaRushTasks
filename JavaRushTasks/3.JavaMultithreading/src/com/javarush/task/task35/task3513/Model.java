@@ -62,7 +62,10 @@ public class Model {
                 isChanged = true;
         }
 
-        if (isChanged) addTile();
+        if (isChanged) {
+            addTile();
+            isSaveNeeded = true;
+        }
     }
 
     // сдвиг вправо
@@ -255,7 +258,7 @@ public class Model {
         return false;
     }
 
-    // возвращает объект типа MoveEfficiency описывающий эффективность переданного хода-
+    // возвращает объект типа MoveEfficiency описывающий эффективность переданного хода
     public MoveEfficiency getMoveEfficiency(Move move) {
         MoveEfficiency moveEfficiency;
         move.move();
@@ -270,6 +273,7 @@ public class Model {
         return moveEfficiency;
     }
 
+    // реализация выбора эффективного хода из возможных
     public void autoMove() {
         PriorityQueue<MoveEfficiency> queue = new PriorityQueue(4, Collections.reverseOrder());
         queue.add(getMoveEfficiency(this::left));
