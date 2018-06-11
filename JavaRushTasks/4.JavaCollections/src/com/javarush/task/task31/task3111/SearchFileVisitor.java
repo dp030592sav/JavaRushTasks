@@ -17,20 +17,23 @@ public class SearchFileVisitor extends SimpleFileVisitor<Path> {
     private List<Path> foundFiles = new ArrayList<>();
 
     @Override
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if(partOfName != null && file.toString().contains(partOfName))
-            foundFiles.add(file);
-        else if(partOfContent != null){
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file.toString())));
-            List<String> list = new ArrayList<>();
-            while (bufferedReader.ready()){
-                list.add(bufferedReader.readLine());
-            }
-            bufferedReader.close();
-        }
-        byte[] content = Files.readAllBytes(file); // размер файла: content.length
+    public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
+        boolean needAdd = true;
+        byte[] content = Files.readAllBytes(path); // размер файла: content.length
 
-        return super.visitFile(file, attrs);
+        if (partOfName != null && !path.toString().contains(partOfName))
+            needAdd = false;
+        if (partOfContent != null && new String(Files.readAllBytes(path)).contains(partOfContent))
+            needAdd = false;
+        if (maxSize != 0 && content.length > maxSize)
+            needAdd = false;
+        if (minSize != 0 && content.length < minSize)
+            needAdd = false;
+
+        if(needAdd)
+            foundFiles.add(path);
+
+        return super.visitFile(path, attrs);
     }
 
     public void setPartOfName(String partOfName) {
