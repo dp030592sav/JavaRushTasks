@@ -2447,3 +2447,19 @@ java.io.IOException: Server returned HTTP response code: 502 for URL: https://ja
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
 2018-06-15 10:44:22 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = false
+2018-06-15 10:44:41 WARN  ValidateButton.checkServerAvailable(68) - Сервер Javarush обновляется. Подождите немного, перезапустите IntelliJ IDEA и повторите попытку.
+2018-06-15 10:54:45 INFO  HttpsURLConnectionClient.getWebResourceAsStream(534) - responseCode = 200
+2018-06-15 10:54:46 INFO  HttpsURLConnectionClient.login(186) - responseCode = 200
+2018-06-15 10:54:46 INFO  HttpsURLConnectionClient.login(229) - JSESSIONID=D79BD0390E3E462019309273D1093B9D
+2018-06-15 10:54:46 INFO  HttpsURLConnectionClient.refreshUserInfo(694) - responseCode = 200
+2018-06-15 10:54:46 INFO  HttpsURLConnectionClient.refreshUserInfo(712) - Информация о пользователе получена.
+2018-06-15 10:54:46 INFO  HttpsURLConnectionClient.getTask(491) - responseCode = 200
+2018-06-15 10:54:54 INFO  HttpsURLConnectionClient.manualComplete(33) - responseCode = 200
+2018-06-15 10:54:54 INFO  HttpsURLConnectionClient.getTask(491) - responseCode = 200
+2018-06-15 10:55:02 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = true
+2018-06-15 10:55:03 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-06-15 10:55:03 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-06-15 10:55:03 INFO  HttpsURLConnectionClient.testConnection(125) - resultHttp = true
+2018-06-15 10:55:03 INFO  HttpsURLConnectionClient.testConnection(137) - Using proxy = false
+2018-06-15 10:55:03 INFO  HttpsURLConnectionClient.testConnection(147) - resultHttps = true
+2018-06-15 10:55:03 INFO  HttpsURLConnectionClient.getWebResourceAsStream(534) - responseCode = 200
