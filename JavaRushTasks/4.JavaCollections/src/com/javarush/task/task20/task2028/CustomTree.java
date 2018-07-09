@@ -1,24 +1,34 @@
 package com.javarush.task.task20.task2028;
 
 import java.io.Serializable;
-import java.util.AbstractList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /* 
 Построй дерево(1)
 */
 public class CustomTree extends AbstractList<String> implements Cloneable, Serializable {
-
     Entry<String> root;
 
     public CustomTree() {
-        root = new Entry<String>("root");
+        root = new Entry<>("0");
     }
 
     @Override
     public boolean add(String entryName) {
-        return addEntry(root, entryName);
+        Queue<Entry<String>> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            Entry<String> entry = queue.poll();
+            if (addEntry(entry, entryName)) {
+                return true;
+            } else {
+                queue.offer(entry.leftChild);
+                queue.offer(entry.rightChild);
+            }
+        }
+
+        return false;
     }
 
     private boolean addEntry(Entry<String> entry, String entryName) {
@@ -29,46 +39,43 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
             entry.leftChild = new Entry<>(entryName);
             entry.leftChild.parent = entry;
             result = true;
-        }
-        else if(entry.availableToAddRightChildren){
+        } else if (entry.availableToAddRightChildren) {
             entry.rightChild = new Entry<>(entryName);
             entry.rightChild.parent = entry;
             result = true;
         }
-        else
-            result = addEntry(entry.leftChild, entryName);
 
         return result;
     }
 
     @Override
     public int size() {
-        return sizeEntry(root) -1;
+        return sizeEntry(root) - 1;
     }
 
     private int sizeEntry(Entry<String> entry) {
-        if(entry == null)
+        if (entry == null)
             return 0;
         return sizeEntry(entry.leftChild) + 1 + sizeEntry(entry.rightChild);
     }
 
-    public String getParent(String entryName){
+    public String getParent(String entryName) {
         return getParentEntry(root, entryName);
     }
 
     private String getParentEntry(Entry<String> entry, String entryName) {
-        if(entry == null)
+        if (entry == null)
             return null;
-        else if(entry.elementName.equals(entryName))
-            return entry.elementName;
+        else if (entry.elementName.equals(entryName))
+            return entry.parent.elementName;
 
         String left = getParentEntry(entry.leftChild, entryName);
-        if(left != null)
+        if (left != null)
             return left;
 
         String rigth = getParentEntry(entry.rightChild, entryName);
-        if(rigth != null)
-            return left;
+        if (rigth != null)
+            return rigth;
 
         return null;
     }

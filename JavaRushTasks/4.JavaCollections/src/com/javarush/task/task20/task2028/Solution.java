@@ -11,7 +11,7 @@ public class Solution {
         }
 
         System.out.println("List size is " + list.size());
-        System.out.println("Expected parent is 3, actual parent is " + ((CustomTree) list).getParent("8"));
+        System.out.println("Expected parent is 6, actual parent is " + ((CustomTree) list).getParent("13"));
         System.out.println("Expected parent is null, actual parent is " + ((CustomTree) list).getParent("20"));
     }
 }
