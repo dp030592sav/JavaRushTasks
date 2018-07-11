@@ -23,8 +23,10 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
             if (addEntry(entry, entryName)) {
                 return true;
             } else {
-                queue.offer(entry.leftChild);
-                queue.offer(entry.rightChild);
+                if (entry.leftChild != null)
+                    queue.offer(entry.leftChild);
+                if (entry.rightChild != null)
+                    queue.offer(entry.rightChild);
             }
         }
 
@@ -32,7 +34,11 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
     }
 
     private boolean addEntry(Entry<String> entry, String entryName) {
+        if (entry == null)
+            return false;
+
         boolean result = false;
+
         entry.checkChildren();
 
         if (entry.availableToAddLeftChildren) {
@@ -78,6 +84,45 @@ public class CustomTree extends AbstractList<String> implements Cloneable, Seria
             return rigth;
 
         return null;
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        if (!o.getClass().equals(String.class))
+            throw new UnsupportedOperationException();
+
+        return removeEntry(root, o.toString());
+    }
+
+    private boolean removeEntry(Entry<String> entry, String entryName) {
+        if (entry == null)
+            return false;
+
+        if (entry.leftChild != null) {
+            if (entry.leftChild.elementName.equals(entryName)) {
+                entry.leftChild = null;
+                entry.availableToAddLeftChildren = true;
+                return true;
+            } else {
+                if (removeEntry(entry.leftChild, entryName)) {
+                    return true;
+                }
+            }
+        }
+
+        if (entry.rightChild != null) {
+            if (entry.rightChild.elementName.equals(entryName)) {
+                entry.rightChild = null;
+                entry.availableToAddRightChildren = true;
+                return true;
+            } else {
+                if (removeEntry(entry.rightChild, entryName)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     @Override
