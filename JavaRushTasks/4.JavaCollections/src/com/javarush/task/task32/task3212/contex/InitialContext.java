@@ -3,6 +3,8 @@ package com.javarush.task.task32.task3212.contex;
 import com.javarush.task.task32.task3212.service.impl.EJBServiceImpl;
 import com.javarush.task.task32.task3212.service.impl.JMSServiceImpl;
 
+import java.io.StringReader;
+
 public class InitialContext {
     public Object lookup(String jndiName) {
 
@@ -13,6 +15,7 @@ public class InitialContext {
             System.out.println("Looking up and creating a new JMSService object");
             return new JMSServiceImpl();
         }
+
         return null;
     }
 }
