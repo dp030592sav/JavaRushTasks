@@ -1,8 +1,15 @@
 package com.javarush.task.task22.task2213;
 
+
+/**
+ * Класс Figure описывает фигурку тетриса
+ */
 public class Figure {
-    private int x,y;
+    //метрица которая определяет форму фигурки: 1 - клетка не пустая, 0 - пустая
     private int[][] matrix;
+    //координаты
+    private int x;
+    private int y;
 
     public Figure(int x, int y, int[][] matrix) {
         this.x = x;
@@ -22,29 +29,103 @@ public class Figure {
         return matrix;
     }
 
-    // для движения фигурки влево
-    public void left(){}
+    /**
+     * Поворачиваем фигурку.
+     * Для простоты - просто вокруг главной диагонали.
+     */
+    public void rotate() {
+        int[][] matrix2 = new int[3][3];
 
-    // для движения фигурки вправо
-    public void right(){}
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix2[i][j] = matrix[j][i];
+            }
+        }
 
-    // для движения фигурки вниз
-    public void down(){}
+        matrix = matrix2;
+    }
 
-    // для движения фигурки вверх
-    public void up(){}
+    /**
+     * Двигаем фигурку влево.
+     * Проверяем не вылезла ли она за границу поля и/или не залезла ли на занятые клетки.
+     */
+    public void left() {
+        x--;
+        if (!isCurrentPositionAvailable())
+            x++;
+    }
 
-    // для поворота фигурки вокруг главной диагонали
-    public void rotate(){}
+    /**
+     * Двигаем фигурку вправо.
+     * Проверяем не вылезла ли она за границу поля и/или не залезла ли на занятые клетки.
+     */
+    public void right() {
+        x++;
+        if (!isCurrentPositionAvailable())
+            x--;
+    }
 
-    // падение фигурки в низ до дна
-    public void downMaximum(){}
+    /**
+     * Двигаем фигурку вверх.
+     * Используется, если фигурка залезла на занятые клетки.
+     */
+    public void up() {
+        y--;
+    }
 
-    // проверка - может ли фигурка быть помещена в текущую позицию
-    public boolean isCurrentPositionAvailable(){
+    /**
+     * Двигаем фигурку вниз.
+     */
+    public void down() {
+        y++;
+    }
+
+    /**
+     * Двигаем фигурку вниз до тех пор, пока не залезем на кого-нибудь.
+     */
+    public void downMaximum() {
+        while (isCurrentPositionAvailable()) {
+            y++;
+        }
+
+        y--;
+    }
+
+    /**
+     * Проверяем - может ли фигурка находится на текущей позиции:
+     * а) не выходит ли она за границы поля
+     * б) не заходит ли она на занятые клетки
+     */
+    public boolean isCurrentPositionAvailable() {
+        Field field = Tetris.game.getField();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matrix[i][j] == 1) {
+                    if (y + i >= field.getHeight())
+                        return false;
+
+                    Integer value = field.getValue(x + j, y + i);
+                    if (value == null || value == 1)
+                        return false;
+                }
+            }
+        }
+
         return true;
     }
 
-    // вызывается, когда фигурка достигла дна или уперлась в другую фигурку
-    public void landed(){}
+    /**
+     * Приземляем фигурку - добавляем все ее непустые клетки к клеткам поля.
+     */
+    public void landed() {
+        Field field = Tetris.game.getField();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matrix[i][j] == 1)
+                    field.setValue(x + j, y + i, 1);
+            }
+        }
+    }
 }

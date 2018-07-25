@@ -13,7 +13,7 @@ public class Field {
     //матрица поля: 1 - клетка занята, 0 - свободна
     private int[][] matrix;
 
-    public Field(int height, int width) {
+    public Field(int width, int height) {
         this.width = width;
         this.height = height;
         matrix = new int[height][width];
@@ -110,12 +110,15 @@ public class Field {
 
         //Копируем все непустые линии в список.
         for (int i = 0; i < height; i++) {
+            //подсчитываем количество единиц в строке - просто суммируем все ее значения
+            int count = 0;
             for (int j = 0; j < width; j++) {
-                if (matrix[i][j] == 0) {
-                    lines.add(matrix[i]);
-                    break;
-                }
+                count += matrix[i][j];
             }
+
+            //Если сумма строки не равна ее ширине - добавляем в список
+            if (count != width)
+                lines.add(matrix[i]);
         }
 
         //Добавляем недостающие строки в начало списка.
