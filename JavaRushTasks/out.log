@@ -5713,3 +5713,35 @@ java.io.IOException: Server returned HTTP response code: 502 for URL: https://ja
 2018-07-30 13:56:45 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
 2018-07-30 13:57:45 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
 2018-07-30 13:58:45 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
+2018-07-30 13:59:45 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
+2018-07-30 14:00:45 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
+2018-07-30 14:01:42 INFO  ApacheHttpClient.getWebResourceAsStream(434) - responseCode = 200
+2018-07-30 14:01:43 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-07-30 14:01:43 INFO  ApacheHttpClient.getWebResourceAsStream(434) - responseCode = 200
+2018-07-30 14:01:45 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
+2018-07-30 14:01:46 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-07-30 14:01:46 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-07-30 14:02:17 INFO  JavaRushTasksProjectComponent.projectClosing(165) - ---------- Project JavaRushTasks closed ----------
+
+2018-07-30 14:02:17 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-07-30 14:02:18 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-07-30 14:02:18 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-07-31 11:13:28 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+2018-07-31 11:13:28 INFO  JavaRushTasksProjectComponent.projectOpened(69) - ---------- Version 3.20 ----------
+
+2018-07-31 11:13:28 INFO  ApacheHttpClient.createAsyncHttpClient(129) - Выбрано 1 прокси. Тип : DIRECT
+2018-07-31 11:13:29 INFO  ApacheHttpClient.<init>(87) - ApacheHttpClient проинстанциирован успешно.
+2018-07-31 11:13:29 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-07-31 11:13:29 INFO  ApacheHttpClient.testConnection(195) - result = true
+2018-07-31 11:13:29 INFO  ApacheHttpClient.login(225) - Ожидание ответа сервера.
+2018-07-31 11:13:29 INFO  ApacheHttpClient.login(229) - responseCode = 200
+2018-07-31 11:13:29 INFO  ApacheHttpClient.login(260) - JSESSIONID OK
+2018-07-31 11:13:29 INFO  ApacheHttpClient.refreshUserInfo(288) - responseCode = 200
+2018-07-31 11:13:29 INFO  ApacheHttpClient.refreshUserInfo(294) - Информация о пользователе получена.
+2018-07-31 11:13:30 INFO  ApacheHttpClient.startGA(31) - GAService запущен.
+2018-07-31 11:13:30 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-07-31 11:13:33 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-07-31 11:13:33 INFO  ApacheHttpClient.testConnection(195) - result = true
+2018-07-31 11:13:33 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-07-31 11:13:33 INFO  ApacheHttpClient.testConnection(195) - result = true
+2018-07-31 11:13:34 INFO  ApacheHttpClient.getWebResourceAsStream(434) - responseCode = 200
