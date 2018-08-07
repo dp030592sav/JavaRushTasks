@@ -38,12 +38,12 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="2">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
             <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Условие.jrtc">
+              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/Условие.jrtc">
                 <provider selected="true" editor-type-id="EditorTypeId">
                   <state />
                 </provider>
@@ -59,22 +59,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Solution.java">
+      <file leaf-file-name="Solution.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
-              <folding>
-                <element signature="e#759#767#0" expanded="true" />
-              </folding>
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Валидация" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/Валидация">
-          <provider selected="true" editor-type-id="EditorTypeId">
-            <state />
+      <file leaf-file-name="AnyObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/AnyObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SoftCache.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/SoftCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -128,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task32/task3211/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task32/task3205/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task32/task3205/CustomInvocationHandler.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task32/task3206/Solution.java" />
@@ -179,6 +189,7 @@
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3405/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Условие.jrtc" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Solution.java" />
+        <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/SoftCache.java" />
       </list>
     </option>
   </component>
@@ -304,6 +315,15 @@
               <item name="task" type="462c0819:PsiDirectoryNode" />
               <item name="task34" type="462c0819:PsiDirectoryNode" />
               <item name="task3411" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JavaRushTasks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaRushTasks" type="462c0819:PsiDirectoryNode" />
+              <item name="4.JavaCollections" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="task" type="462c0819:PsiDirectoryNode" />
+              <item name="task34" type="462c0819:PsiDirectoryNode" />
+              <item name="task3413" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaRushTasks" type="b2602c69:ProjectViewProjectNode" />
@@ -1141,11 +1161,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3305/Motorbike.java" />
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3305/Parking.java" />
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3305/Auto.java" />
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3305/Условие.jrtc" />
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3311/RealBean.java" />
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3311/Solution.java" />
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3311/Условие.jrtc" />
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task33/task3304/Solution.java" />
@@ -1257,7 +1272,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
+          <folding>
+            <element signature="e#759#767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/AnyObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="277" column="6" lean-forward="true" selection-start-line="277" selection-start-column="6" selection-end-line="277" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Условие.jrtc">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/Условие.jrtc">
       <provider selected="true" editor-type-id="EditorTypeId">
         <state />
       </provider>
@@ -1267,13 +1321,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3406/Solution.java">
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task34/task3413/SoftCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="26" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
-          <folding>
-            <element signature="e#759#767#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
