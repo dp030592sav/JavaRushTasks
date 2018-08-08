@@ -75,7 +75,6 @@ public class Solution {
         }
 
         public List<PhantomReference<Monkey>> getFilledList() {
-            ReferenceQueue<Integer> queue = new ReferenceQueue<Integer>();
             List<PhantomReference<Monkey>> list = new ArrayList<>();
 
             for (int i = 0; i < 200; i++)
