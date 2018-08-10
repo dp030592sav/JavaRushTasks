@@ -7942,3 +7942,8 @@ java.lang.AssertionError
 2018-08-10 13:02:52 INFO  ApacheHttpClient.testConnection(195) - result = true
 2018-08-10 13:02:52 INFO  ApacheHttpClient.getWebResourceAsStream(434) - responseCode = 200
 2018-08-10 13:03:19 INFO  ApacheHttpClient.sendEvent(467) - responseCode = 200
+2018-08-10 13:04:15 INFO  JavaRushTasksProjectComponent.projectClosing(165) - ---------- Project JavaRushTasks closed ----------
+
+2018-08-10 13:04:15 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-08-10 13:04:15 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
+2018-08-10 13:04:15 INFO  ApacheHttpClient.getTask(419) - responseCode = 200
