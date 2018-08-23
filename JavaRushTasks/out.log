@@ -8993,3 +8993,11 @@ java.lang.AssertionError
 2018-08-23 13:13:42 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
 2018-08-23 13:13:43 INFO  ApacheHttpClient.completed(27) - responseCode = 200
 2018-08-23 13:13:44 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-08-23 13:14:14 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-08-23 13:14:14 INFO  ApacheHttpClient.getFilteredTasks(324) - responseCode = 200
+2018-08-23 13:14:15 INFO  ApacheHttpClient.getTaskTemplateInfo(341) - responseCode = 200
+2018-08-23 13:14:16 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-08-23 13:14:16 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-08-23 13:14:16 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-08-23 13:14:16 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-08-23 13:14:16 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
