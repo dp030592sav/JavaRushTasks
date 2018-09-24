@@ -11,5 +11,6 @@
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-core:2.8.4" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.8.4" level="project" />
     <orderEntry type="library" name="org.slf4j:slf4j-api:1.7.23" level="project" />
+    <orderEntry type="library" name="ca.exprofesso:guava-jcache:1.0.4-SNAPSHOT" level="project" />
   </component>
 </module>
