@@ -4,6 +4,7 @@ import com.javarush.task.task33.task3310.strategy.*;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Set;
 
 public class Solution {
@@ -43,6 +44,7 @@ public class Solution {
 
         // генерировать тестовое множество строк
         HashSet<String> strings = new HashSet<>();
+        LinkedList<String> linkedList = new LinkedList();
 
         for (long i = 0; i < elementsNumber; i++)
             strings.add( Helper.generateRandomString());
