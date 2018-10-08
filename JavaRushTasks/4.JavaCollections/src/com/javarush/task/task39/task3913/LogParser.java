@@ -76,7 +76,7 @@ public class LogParser implements IPQuery {
         for (final File fileEntry : folder.listFiles()) {
             if (fileEntry.isDirectory()) {
                 files.addAll(getLogFilesFromFolder(fileEntry));
-            } else {
+            } else if(fileEntry.getName().endsWith(".log")){
                 files.add(fileEntry);
             }
         }
@@ -103,7 +103,7 @@ public class LogParser implements IPQuery {
 
     private List<Log> parsLinesToObjects(List<String> lines) {
         List<Log> result = new ArrayList<>();
-        SimpleDateFormat formatter = new SimpleDateFormat("d.M.y H:m:s");
+        SimpleDateFormat formatter = new SimpleDateFormat("d.M.y HH:m:s");
 
         for (String line : lines) {
             String[] components = line.split("\\t");
@@ -134,7 +134,8 @@ public class LogParser implements IPQuery {
         List<Log> result = new ArrayList<>();
 
         for (Log log : logs) {
-            if ((after == null || log.date.after(after)) && (before == null || log.date.before(before)))
+//            if ((after == null || log.date.after(after)) && (before == null || log.date.before(before)))
+            if ((after == null || log.date.getTime() >= after.getTime()) && (before == null || log.date.getTime() <= before.getTime()))
                 result.add(log);
         }
 
