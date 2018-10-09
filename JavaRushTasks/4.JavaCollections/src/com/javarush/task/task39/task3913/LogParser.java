@@ -1,9 +1,6 @@
 package com.javarush.task.task39.task3913;
 
-import com.javarush.task.task39.task3913.query.DateQuery;
-import com.javarush.task.task39.task3913.query.EventQuery;
-import com.javarush.task.task39.task3913.query.IPQuery;
-import com.javarush.task.task39.task3913.query.UserQuery;
+import com.javarush.task.task39.task3913.query.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,8 +10,9 @@ import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
     private Path logDir;
     private List<Log> AllLogs;
 
@@ -493,6 +491,33 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         for (Log log : logs)
             if (log.event == Event.DONE_TASK && !result.containsKey(log.taskNumber))
                 result.put(log.taskNumber, getNumberOfSuccessfulAttemptToSolveTask(log.taskNumber, after, before));
+
+        return result;
+    }
+
+    // QLQuery
+
+    @Override
+    public Set<Object> execute(String query) {
+        Set<Object> result = new TreeSet<>();
+
+        switch (query){
+            case "get ip":
+                result = AllLogs.stream().map(i -> i.ip).collect(Collectors.toSet());
+                break;
+            case "get user":
+                result = AllLogs.stream().map(i -> i.name).collect(Collectors.toSet());
+                break;
+            case "get date":
+                result = AllLogs.stream().map(i -> i.date).collect(Collectors.toSet());
+                break;
+            case "get event":
+                result = AllLogs.stream().map(i -> i.event).collect(Collectors.toSet());
+                break;
+            case "get status":
+                result = AllLogs.stream().map(i -> i.status).collect(Collectors.toSet());
+                break;
+        }
 
         return result;
     }
