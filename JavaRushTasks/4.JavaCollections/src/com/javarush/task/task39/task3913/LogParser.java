@@ -1,5 +1,7 @@
 package com.javarush.task.task39.task3913;
 
+import com.javarush.task.task39.task3913.query.DateQuery;
+import com.javarush.task.task39.task3913.query.EventQuery;
 import com.javarush.task.task39.task3913.query.IPQuery;
 import com.javarush.task.task39.task3913.query.UserQuery;
 
@@ -12,65 +14,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class LogParser implements IPQuery, UserQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
     private Path logDir;
     private List<Log> AllLogs;
 
     public LogParser(Path logDir) {
         this.logDir = logDir;
         this.AllLogs = parsLinesToObjects();
-    }
-
-    @Override
-    public int getNumberOfUniqueIPs(Date after, Date before) {
-        return getUniqueIPs(after, before).size();
-    }
-
-    @Override
-    public Set<String> getUniqueIPs(Date after, Date before) {
-        Set<String> set = new HashSet<>();
-        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
-
-        for (Log log : logs)
-            set.add(log.ip);
-
-        return set;
-    }
-
-    @Override
-    public Set<String> getIPsForUser(String user, Date after, Date before) {
-        Set<String> set = new HashSet<>();
-        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
-
-        for (Log log : logs)
-            if (log.name.equals(user))
-                set.add(log.ip);
-
-        return set;
-    }
-
-    @Override
-    public Set<String> getIPsForEvent(Event event, Date after, Date before) {
-        Set<String> set = new HashSet<>();
-        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
-
-        for (Log log : logs)
-            if (log.event == event)
-                set.add(log.ip);
-
-        return set;
-    }
-
-    @Override
-    public Set<String> getIPsForStatus(Status status, Date after, Date before) {
-        Set<String> set = new HashSet<>();
-        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
-
-        for (Log log : logs)
-            if (log.status == status)
-                set.add(log.ip);
-
-        return set;
     }
 
     private List<File> getLogFilesFromFolder(final File folder) {
@@ -143,6 +93,62 @@ public class LogParser implements IPQuery, UserQuery {
 
         return result;
     }
+
+    // IPQuery
+
+    @Override
+    public int getNumberOfUniqueIPs(Date after, Date before) {
+        return getUniqueIPs(after, before).size();
+    }
+
+    @Override
+    public Set<String> getUniqueIPs(Date after, Date before) {
+        Set<String> set = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            set.add(log.ip);
+
+        return set;
+    }
+
+    @Override
+    public Set<String> getIPsForUser(String user, Date after, Date before) {
+        Set<String> set = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user))
+                set.add(log.ip);
+
+        return set;
+    }
+
+    @Override
+    public Set<String> getIPsForEvent(Event event, Date after, Date before) {
+        Set<String> set = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.event == event)
+                set.add(log.ip);
+
+        return set;
+    }
+
+    @Override
+    public Set<String> getIPsForStatus(Status status, Date after, Date before) {
+        Set<String> set = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.status == status)
+                set.add(log.ip);
+
+        return set;
+    }
+
+    // UserQuery
 
     @Override
     public Set<String> getAllUsers() {
@@ -269,6 +275,224 @@ public class LogParser implements IPQuery, UserQuery {
         for (Log log : logs)
             if (log.event == Event.DONE_TASK && log.taskNumber == task)
                 result.add(log.name);
+
+        return result;
+    }
+
+    // DateQuery
+
+    @Override
+    public Set<Date> getDatesForUserAndEvent(String user, Event event, Date after, Date before) {
+        Set<Date> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user) && log.event == event)
+                result.add(log.date);
+
+        return result;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenSomethingFailed(Date after, Date before) {
+        Set<Date> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.status == Status.FAILED)
+                result.add(log.date);
+
+        return result;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenErrorHappened(Date after, Date before) {
+        Set<Date> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.status == Status.ERROR)
+                result.add(log.date);
+
+        return result;
+    }
+
+    @Override
+    public Date getDateWhenUserLoggedFirstTime(String user, Date after, Date before) {
+        List<Date> list = new ArrayList<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user) && log.event == Event.LOGIN)
+                list.add(log.date);
+
+        Collections.sort(list);
+
+        return list.size() > 0 ? list.get(0) : null;
+    }
+
+    @Override
+    public Date getDateWhenUserSolvedTask(String user, int task, Date after, Date before) {
+        List<Date> list = new ArrayList<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user) && log.event == Event.SOLVE_TASK && log.taskNumber == task)
+                list.add(log.date);
+
+        Collections.sort(list);
+
+        return list.size() > 0 ? list.get(0) : null;
+    }
+
+    @Override
+    public Date getDateWhenUserDoneTask(String user, int task, Date after, Date before) {
+        List<Date> list = new ArrayList<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user) && log.event == Event.DONE_TASK && log.taskNumber == task)
+                list.add(log.date);
+
+        Collections.sort(list);
+
+        return list.size() > 0 ? list.get(0) : null;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenUserWroteMessage(String user, Date after, Date before) {
+        Set<Date> result = new TreeSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user) && log.event == Event.WRITE_MESSAGE)
+                result.add(log.date);
+
+        return result;
+    }
+
+    @Override
+    public Set<Date> getDatesWhenUserDownloadedPlugin(String user, Date after, Date before) {
+        Set<Date> result = new TreeSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user) && log.event == Event.DOWNLOAD_PLUGIN)
+                result.add(log.date);
+
+        return result;
+    }
+
+    // EventQuery
+
+    @Override
+    public int getNumberOfAllEvents(Date after, Date before) {
+        return getAllEvents(after, before).size();
+    }
+
+    @Override
+    public Set<Event> getAllEvents(Date after, Date before) {
+        Set<Event> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            result.add(log.event);
+
+        return result;
+    }
+
+    @Override
+    public Set<Event> getEventsForIP(String ip, Date after, Date before) {
+        Set<Event> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.ip.equals(ip))
+                result.add(log.event);
+
+        return result;
+    }
+
+    @Override
+    public Set<Event> getEventsForUser(String user, Date after, Date before) {
+        Set<Event> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.name.equals(user))
+                result.add(log.event);
+
+        return result;
+    }
+
+    @Override
+    public Set<Event> getFailedEvents(Date after, Date before) {
+        Set<Event> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.status == Status.FAILED)
+                result.add(log.event);
+
+        return result;
+    }
+
+    @Override
+    public Set<Event> getErrorEvents(Date after, Date before) {
+        Set<Event> result = new HashSet<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.status == Status.ERROR)
+                result.add(log.event);
+
+        return result;
+    }
+
+    @Override
+    public int getNumberOfAttemptToSolveTask(int task, Date after, Date before) {
+        int result = 0;
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.event == Event.SOLVE_TASK && log.taskNumber == task)
+                result++;
+
+        return result;
+    }
+
+    @Override
+    public int getNumberOfSuccessfulAttemptToSolveTask(int task, Date after, Date before) {
+        int result = 0;
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.event == Event.DONE_TASK && log.taskNumber == task)
+                result++;
+
+        return result;
+    }
+
+    @Override
+    public Map<Integer, Integer> getAllSolvedTasksAndTheirNumber(Date after, Date before) {
+        Map<Integer, Integer> result = new HashMap<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.event == Event.SOLVE_TASK && !result.containsKey(log.taskNumber))
+                result.put(log.taskNumber, getNumberOfAttemptToSolveTask(log.taskNumber, after, before));
+
+        return result;
+    }
+
+    @Override
+    public Map<Integer, Integer> getAllDoneTasksAndTheirNumber(Date after, Date before) {
+        Map<Integer, Integer> result = new HashMap<>();
+        List<Log> logs = getLogsForPeriod(AllLogs, after, before);
+
+        for (Log log : logs)
+            if (log.event == Event.DONE_TASK && !result.containsKey(log.taskNumber))
+                result.put(log.taskNumber, getNumberOfSuccessfulAttemptToSolveTask(log.taskNumber, after, before));
 
         return result;
     }
