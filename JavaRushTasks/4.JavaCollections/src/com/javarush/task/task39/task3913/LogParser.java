@@ -502,14 +502,14 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
     @Override
     public Set<Object> execute(String query) {
-        Set<Object> result = new TreeSet<>();
+        Set<Object> result = new HashSet<>();
 
         if (!query.contains("=")) {
             String field = query.substring(3).trim();
 
             result = AllLogs.stream().map(i -> getValueFromObject(i, field))
                     .collect(Collectors.toSet());
-        } else {
+        } else if (!query.contains("and")) {
             String field1 = query.substring(3, query.indexOf("for")).trim();
             String field2 = query.substring(query.indexOf("for") + 4, query.indexOf("=")).trim();
             String value = query.split("=")[1].trim().replaceAll("\"", "");
@@ -517,6 +517,28 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
             result = AllLogs.stream().filter(log -> equalsFields(getValueFromObject(log, field2), value))
                     .map(i -> getValueFromObject(i, field1))
                     .collect(Collectors.toSet());
+        } else {
+//            get ip for user = "Eduard Petrovich Morozko" and date between "11.12.2013 0:00:00" and "03.01.2014 23:59:59"
+            String field1 = query.substring(3, query.indexOf("for")).trim();
+            String field2 = query.substring(query.indexOf("for") + 4, query.indexOf("=")).trim();
+            String value = query.split("=")[1].trim().split(" and")[0].replaceAll("\"", "");
+            String[] dates = query.split("=")[1].split(" and date between ")[1]
+                    .replaceAll("\"", "").split(" and");
+            SimpleDateFormat formatter = new SimpleDateFormat("d.M.y HH:m:s");
+            Date dateAfter;
+            Date dateBefore;
+
+            try {
+                dateAfter = formatter.parse(dates[0]);
+                dateBefore = formatter.parse(dates[1]);
+
+                result = AllLogs.stream().filter(log -> equalsFields(getValueFromObject(log, field2), value)
+                        && log.date.getTime() > dateAfter.getTime() && log.date.getTime() < dateBefore.getTime())
+                        .map(i -> getValueFromObject(i, field1))
+                        .collect(Collectors.toSet());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
 
         return result;

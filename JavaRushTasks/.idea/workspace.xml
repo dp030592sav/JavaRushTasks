@@ -40,6 +40,23 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/Условие.jrtc">
+                <provider selected="true" editor-type-id="EditorTypeId">
+                  <state />
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="JavaRushTasks" />
   </component>
@@ -49,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
+              <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,9 +84,47 @@
       <file leaf-file-name="LogParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/LogParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2647">
-              <caret line="551" column="17" lean-forward="true" selection-start-line="551" selection-start-column="17" selection-end-line="551" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="225">
+              <caret line="533" column="0" lean-forward="true" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
+              <folding>
+                <element signature="method#LogParser#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getLogFilesFromFolder#0;class#LogParser#0" expanded="false" />
+                <element signature="method#readLinesFromFolder#0;class#LogParser#0" expanded="false" />
+                <element signature="method#parsLinesToObjects#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getLogsForPeriod#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getUniqueIPs#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getIPsForUser#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getIPsForEvent#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getIPsForStatus#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getAllUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getNumberOfUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getNumberOfUserEvents#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getUsersForIP#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getLoggedUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDownloadedPluginUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getWroteMessageUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getSolvedTaskUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getSolvedTaskUsers#1;class#LogParser#0" expanded="false" />
+                <element signature="method#getDoneTaskUsers#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDoneTaskUsers#1;class#LogParser#0" expanded="false" />
+                <element signature="method#getDatesForUserAndEvent#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDatesWhenSomethingFailed#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDatesWhenErrorHappened#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDateWhenUserLoggedFirstTime#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDateWhenUserSolvedTask#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDateWhenUserDoneTask#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDatesWhenUserWroteMessage#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getDatesWhenUserDownloadedPlugin#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getAllEvents#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getEventsForIP#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getEventsForUser#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getFailedEvents#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getErrorEvents#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getNumberOfAttemptToSolveTask#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getNumberOfSuccessfulAttemptToSolveTask#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getAllSolvedTasksAndTheirNumber#0;class#LogParser#0" expanded="false" />
+                <element signature="method#getAllDoneTasksAndTheirNumber#0;class#LogParser#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1030,7 +1085,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25052854" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25158563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1193,14 +1248,8 @@
           <properties />
           <option name="timeStamp" value="274" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/LogParser.java</url>
-          <line>539</line>
-          <properties />
-          <option name="timeStamp" value="322" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="323" />
+      <option name="time" value="329" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1245,6 +1294,11 @@
         <watch expression="AllLogs.stream().filter(log -&gt; getValueFromObject(log, field2).equals(value))&#10;                    .map(i -&gt; getValueFromObject(i, field1)" />
         <watch expression="obj.getClass().getName()" />
         <watch expression="obj.getClass().getSimpleName()" />
+        <watch expression="dateAfter" />
+        <watch expression="dateAfter" />
+        <watch expression="log -&gt; equalsFields(getValueFromObject(log, field2), value)" />
+        <watch expression="(equalsFields(getValueFromObject(log, field2), value)" />
+        <watch expression="getValueFromObject(log, field2)" />
       </configuration>
     </watches-manager>
   </component>
@@ -1546,6 +1600,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1576,14 +1631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/LogParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2647">
-          <caret line="551" column="17" lean-forward="true" selection-start-line="551" selection-start-column="17" selection-end-line="551" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/Log.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1592,9 +1639,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/LogParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="533" column="0" lean-forward="true" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
+          <folding>
+            <element signature="method#LogParser#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getLogFilesFromFolder#0;class#LogParser#0" expanded="false" />
+            <element signature="method#readLinesFromFolder#0;class#LogParser#0" expanded="false" />
+            <element signature="method#parsLinesToObjects#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getLogsForPeriod#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getUniqueIPs#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getIPsForUser#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getIPsForEvent#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getIPsForStatus#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getAllUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getNumberOfUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getNumberOfUserEvents#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getUsersForIP#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getLoggedUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDownloadedPluginUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getWroteMessageUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getSolvedTaskUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getSolvedTaskUsers#1;class#LogParser#0" expanded="false" />
+            <element signature="method#getDoneTaskUsers#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDoneTaskUsers#1;class#LogParser#0" expanded="false" />
+            <element signature="method#getDatesForUserAndEvent#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDatesWhenSomethingFailed#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDatesWhenErrorHappened#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDateWhenUserLoggedFirstTime#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDateWhenUserSolvedTask#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDateWhenUserDoneTask#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDatesWhenUserWroteMessage#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getDatesWhenUserDownloadedPlugin#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getAllEvents#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getEventsForIP#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getEventsForUser#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getFailedEvents#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getErrorEvents#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getNumberOfAttemptToSolveTask#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getNumberOfSuccessfulAttemptToSolveTask#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getAllSolvedTasksAndTheirNumber#0;class#LogParser#0" expanded="false" />
+            <element signature="method#getAllDoneTasksAndTheirNumber#0;class#LogParser#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Валидация">
@@ -1602,10 +1690,15 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/Условие.jrtc">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3913/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
+          <caret line="0" column="41" lean-forward="true" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
