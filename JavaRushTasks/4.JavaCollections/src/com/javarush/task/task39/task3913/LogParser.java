@@ -6,11 +6,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
     private Path logDir;
@@ -116,7 +119,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user))
+            if (log.user.equals(user))
                 set.add(log.ip);
 
         return set;
@@ -153,7 +156,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         Set<String> result = new HashSet<>();
 
         for (Log log : AllLogs)
-            result.add(log.name);
+            result.add(log.user);
 
         return result;
     }
@@ -164,7 +167,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            result.add(log.name);
+            result.add(log.user);
 
         return result.size();
     }
@@ -175,7 +178,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user))
+            if (log.user.equals(user))
                 result.add(log.event);
 
         return result.size();
@@ -188,7 +191,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.ip.equals(ip))
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -200,7 +203,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.LOGIN)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -212,7 +215,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.DOWNLOAD_PLUGIN)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -224,7 +227,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.WRITE_MESSAGE)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -236,7 +239,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.SOLVE_TASK)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -248,7 +251,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.SOLVE_TASK && log.taskNumber == task)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -260,7 +263,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.DONE_TASK)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -272,7 +275,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
 
         for (Log log : logs)
             if (log.event == Event.DONE_TASK && log.taskNumber == task)
-                result.add(log.name);
+                result.add(log.user);
 
         return result;
     }
@@ -285,7 +288,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user) && log.event == event)
+            if (log.user.equals(user) && log.event == event)
                 result.add(log.date);
 
         return result;
@@ -321,7 +324,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user) && log.event == Event.LOGIN)
+            if (log.user.equals(user) && log.event == Event.LOGIN)
                 list.add(log.date);
 
         Collections.sort(list);
@@ -335,7 +338,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user) && log.event == Event.SOLVE_TASK && log.taskNumber == task)
+            if (log.user.equals(user) && log.event == Event.SOLVE_TASK && log.taskNumber == task)
                 list.add(log.date);
 
         Collections.sort(list);
@@ -349,7 +352,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user) && log.event == Event.DONE_TASK && log.taskNumber == task)
+            if (log.user.equals(user) && log.event == Event.DONE_TASK && log.taskNumber == task)
                 list.add(log.date);
 
         Collections.sort(list);
@@ -363,7 +366,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user) && log.event == Event.WRITE_MESSAGE)
+            if (log.user.equals(user) && log.event == Event.WRITE_MESSAGE)
                 result.add(log.date);
 
         return result;
@@ -375,7 +378,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user) && log.event == Event.DOWNLOAD_PLUGIN)
+            if (log.user.equals(user) && log.event == Event.DOWNLOAD_PLUGIN)
                 result.add(log.date);
 
         return result;
@@ -417,7 +420,7 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
         List<Log> logs = getLogsForPeriod(AllLogs, after, before);
 
         for (Log log : logs)
-            if (log.name.equals(user))
+            if (log.user.equals(user))
                 result.add(log.event);
 
         return result;
@@ -501,21 +504,61 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQ
     public Set<Object> execute(String query) {
         Set<Object> result = new TreeSet<>();
 
-        switch (query){
-            case "get ip":
-                result = AllLogs.stream().map(i -> i.ip).collect(Collectors.toSet());
+        if (!query.contains("=")) {
+            String field = query.substring(3).trim();
+
+            result = AllLogs.stream().map(i -> getValueFromObject(i, field))
+                    .collect(Collectors.toSet());
+        } else {
+            String field1 = query.substring(3, query.indexOf("for")).trim();
+            String field2 = query.substring(query.indexOf("for") + 4, query.indexOf("=")).trim();
+            String value = query.split("=")[1].trim().replaceAll("\"", "");
+
+            result = AllLogs.stream().filter(log -> equalsFields(getValueFromObject(log, field2), value))
+                    .map(i -> getValueFromObject(i, field1))
+                    .collect(Collectors.toSet());
+        }
+
+        return result;
+    }
+
+    private Object getValueFromObject(Log log, String fieldName) {
+        Object obj = null;
+
+        try {
+            Field field = log.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            obj = field.get(log);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return obj;
+    }
+
+    private boolean equalsFields(Object obj, String str) {
+        boolean result = false;
+
+        switch (obj.getClass().getSimpleName()) {
+            case "String":
+                result = obj.toString().equals(str);
                 break;
-            case "get user":
-                result = AllLogs.stream().map(i -> i.name).collect(Collectors.toSet());
+            case "Date":
+                SimpleDateFormat formatter = new SimpleDateFormat("d.M.y HH:m:s");
+                try {
+                    result = obj.equals(formatter.parse(str));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 break;
-            case "get date":
-                result = AllLogs.stream().map(i -> i.date).collect(Collectors.toSet());
+            case "Event":
+                result = obj == Event.valueOf(str);
                 break;
-            case "get event":
-                result = AllLogs.stream().map(i -> i.event).collect(Collectors.toSet());
+            case "Integer":
+                result = obj.equals(Integer.parseInt(str));
                 break;
-            case "get status":
-                result = AllLogs.stream().map(i -> i.status).collect(Collectors.toSet());
+            case "Status":
+                result = obj == Status.valueOf(str);
                 break;
         }
 

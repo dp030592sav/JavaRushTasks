@@ -4,15 +4,15 @@ import java.util.*;
 
 public class Log {
     public String ip;
-    public String name;
+    public String user;
     public Date date;
     public Event event;
-    public int taskNumber;
+    public Integer taskNumber;
     public Status status;
 
     public Log(String ip, String name, Date date, Event event, int taskNumber, Status status) {
         this.ip = ip;
-        this.name = name;
+        this.user = name;
         this.date = date;
         this.event = event;
         this.taskNumber = taskNumber;

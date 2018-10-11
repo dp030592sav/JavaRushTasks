@@ -16,7 +16,13 @@ public class Solution {
         date1.setMonth(7);
         date1.setDate(31);
 
+
+
 //        System.out.println(logParser.getNumberOfUniqueIPs(null, new Date()));
-        System.out.println(logParser.getUniqueIPs(date, date1));
+//        System.out.println(logParser.execute("get ip for user = \"Vasya\""));
+        System.out.println(logParser.execute("get user"));
+        System.out.println("------------------------------");
+        System.out.println(logParser.execute("get event for date = \"28.08.2013 10:11:12\""));
+
     }
 }
