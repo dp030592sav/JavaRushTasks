@@ -24,6 +24,5 @@ public class Solution {
 //        System.out.println("------------------------------");
 //        System.out.println(logParser.execute("get event for date = \"28.08.2013 10:11:12\""));
         System.out.println(logParser.execute("get ip for user = \"Eduard Petrovich Morozko\" and date between \"28.08.2013 3:04:51\" and \"28.08.2013 10:12:12\""));
-
     }
 }
