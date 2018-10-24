@@ -28,7 +28,7 @@ public class Controller {
         List<Vacancy> vacanciesRes = new ArrayList<>();
 
         for (Provider provider : providers) {
-            List<Vacancy> vacancies = provider.getJavaVacancies("");
+            List<Vacancy> vacancies = provider.getJavaVacancies("java Киев");
             if (vacancies != null)
                 vacanciesRes.addAll(vacancies);
         }
