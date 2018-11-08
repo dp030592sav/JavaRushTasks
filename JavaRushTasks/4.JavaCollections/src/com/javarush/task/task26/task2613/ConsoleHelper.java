@@ -1,5 +1,7 @@
 package com.javarush.task.task26.task2613;
 
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +13,7 @@ public class ConsoleHelper {
         System.out.println(message);
     }
 
-    public static String readString() {
+    public static String readString() throws InterruptOperationException {
         String res = "";
         while (true) {
             try {
@@ -22,10 +24,14 @@ public class ConsoleHelper {
                 writeMessage("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
             }
         }
+
+        if (res.equalsIgnoreCase("exit"))
+            throw new InterruptOperationException();
+
         return res.toUpperCase();
     }
 
-    public static String askCurrencyCode() {
+    public static String askCurrencyCode() throws InterruptOperationException {
         String currencyCode;
 
         writeMessage("Введите пожалуйста код валюты");
@@ -40,7 +46,7 @@ public class ConsoleHelper {
         return currencyCode;
     }
 
-    public static String[] getValidTwoDigits(String currencyCode) {
+    public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
         String[] result;
 
         writeMessage("Введите пожалуйста номинал валют и их количество, через пробел");
@@ -57,7 +63,7 @@ public class ConsoleHelper {
         return result;
     }
 
-    public static Operation askOperation(){
+    public static Operation askOperation() throws InterruptOperationException {
         Operation result;
 
         writeMessage("Введите пожалуйста тип операции:\n " +
@@ -69,6 +75,22 @@ public class ConsoleHelper {
                 break;
             } catch (Exception e) {
                 writeMessage("Произошла ошибка при попытке ввода номинала валюты и их количества. Попробуйте еще раз.");
+            }
+        }
+
+        return result;
+    }
+
+    public static int askAmountForWithdraw() throws InterruptOperationException {
+        int result;
+
+        writeMessage("Введите пожалуйста сумму для снятия");
+        while (true) {
+            try {
+                result = Integer.parseInt(readString());
+                break;
+            } catch (Exception e) {
+                writeMessage("Произошла ошибка при попытке ввода сумму для снятия. Попробуйте еще раз.");
             }
         }
 

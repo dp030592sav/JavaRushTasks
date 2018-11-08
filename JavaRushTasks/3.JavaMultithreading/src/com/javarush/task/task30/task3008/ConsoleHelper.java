@@ -25,7 +25,7 @@ public class ConsoleHelper {
         return res;
     }
 
-    public static int readInt(){
+    public static int readInt() {
         int res = 0;
         while (true){
             try {
