@@ -38,36 +38,48 @@ public class CurrencyManipulator {
         return totalAmount;
     }
 
-    public boolean hasMoney(){
+    public boolean hasMoney() {
         return getTotalAmount() != 0;
     }
 
-    public boolean isAmountAvailable(int expectedAmount){
+    public boolean isAmountAvailable(int expectedAmount) {
         return expectedAmount <= getTotalAmount();
     }
 
     public Map<Integer, Integer> withdrawAmount(int expectedAmount) throws NotEnoughMoneyException {
         Map<Integer, Integer> tempMap = new HashMap<>();
         tempMap.putAll(denominations);
+
+
         Map<Integer, Integer> result = new TreeMap(Collections.reverseOrder());
+        int expectedAmountCopy = expectedAmount;
 
         for (Map.Entry<Integer, Integer> entry : tempMap.entrySet()) {
-            //tasks - массив заданий
-            Arrays.sort(tasks); //сортируем по убыванию стоимости
-            TreeSet<Integer> time = new TreeSet<Integer>();
-            for (int i = 1; i <= n; ++i) {
-                time.add(i);
+            int currencyValue = entry.getKey();
+            int currencyCount = entry.getValue();
+
+            for (int i = 0; i < currencyCount; i++) {
+                if (currencyValue <= expectedAmountCopy) {
+                    if (result.containsKey(currencyValue))
+                        result.put(currencyValue, result.get(currencyValue) + 1);
+                    else
+                        result.put(currencyValue, 1);
+
+                    expectedAmountCopy -= currencyValue;
+                } else
+                    break;
             }
-            int ans = 0;
-            for (int i = 0; i < n; ++i) {
-                Integer tmp = time.floor(tasks[i].time);
-                if (tmp == null) { // если нет свободного места в расписании, то в конец
-                    time.remove(time.last());
-                } else { //иначе можно выполнить задание, добавляем в расписание
-                    time.remove(tmp);
-                    ans += tasks[i].cost;
-                }
-            }
+        }
+
+        if (expectedAmountCopy != 0)
+            throw new NotEnoughMoneyException();
+
+        for (Map.Entry<Integer, Integer> entry : result.entrySet()) {
+            int key = entry.getKey();
+            if (tempMap.get(key) != 1)
+                tempMap.put(key, tempMap.get(key) - 1);
+            else
+                tempMap.remove(key);
         }
 
         denominations.clear();

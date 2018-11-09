@@ -89,7 +89,7 @@ public class ConsoleHelper {
             try {
                 result = Integer.parseInt(readString());
                 break;
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 writeMessage("Произошла ошибка при попытке ввода сумму для снятия. Попробуйте еще раз.");
             }
         }

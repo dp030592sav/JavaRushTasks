@@ -22,9 +22,12 @@ class WithdrawCommand implements Command {
                     for (Map.Entry<Integer, Integer> entry : moneyOut.entrySet()) {
                         ConsoleHelper.writeMessage(String.format("\t%s - %s",entry.getKey(), entry.getValue()));
                     }
+                    break;
                 }
+                else
+                    ConsoleHelper.writeMessage("У Вас недостаточно денег");
             } catch (NotEnoughMoneyException e) {
-                ConsoleHelper.writeMessage("У Вас недостаточно денег");
+                ConsoleHelper.writeMessage("Cумму невозможно оброботать");
             }
         } while (true);
 
