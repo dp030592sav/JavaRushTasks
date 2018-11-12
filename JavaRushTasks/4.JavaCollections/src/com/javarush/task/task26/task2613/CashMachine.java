@@ -18,5 +18,6 @@ public class CashMachine {
         } catch (InterruptOperationException e) {
             ConsoleHelper.writeMessage("До новых встреч");
         }
+        System.out.println( CurrencyManipulatorFactory.getManipulatorByCurrencyCode("usd").isAmountAvailable(0));
     }
 }

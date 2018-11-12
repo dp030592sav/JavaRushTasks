@@ -47,43 +47,48 @@ public class CurrencyManipulator {
     }
 
     public Map<Integer, Integer> withdrawAmount(int expectedAmount) throws NotEnoughMoneyException {
-        Map<Integer, Integer> tempMap = new HashMap<>();
-        tempMap.putAll(denominations);
+        int sum = expectedAmount;
+        Map<Integer, Integer> temp = new HashMap<>();
+        temp.putAll(denominations);
 
+        List<Integer> list = new ArrayList<>();
+        for (Map.Entry<Integer, Integer> pair : temp.entrySet()) {
+            list.add(pair.getKey());
+        }
+        Collections.sort(list);
+        Collections.reverse(list);
 
-        Map<Integer, Integer> result = new TreeMap(Collections.reverseOrder());
-        int expectedAmountCopy = expectedAmount;
+        Map<Integer, Integer> result = new TreeMap<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2.compareTo(o1);
+            }
+        });
 
-        for (Map.Entry<Integer, Integer> entry : tempMap.entrySet()) {
-            int currencyValue = entry.getKey();
-            int currencyCount = entry.getValue();
-
-            for (int i = 0; i < currencyCount; i++) {
-                if (currencyValue <= expectedAmountCopy) {
-                    if (result.containsKey(currencyValue))
-                        result.put(currencyValue, result.get(currencyValue) + 1);
-                    else
-                        result.put(currencyValue, 1);
-
-                    expectedAmountCopy -= currencyValue;
-                } else
+        for (Integer i : list) {
+            int key = i;
+            int value = temp.get(key);
+            while (true) {
+                if (sum < key || value <= 0) {
+                    temp.put(key, value);
                     break;
+                }
+                sum -= key;
+                value--;
+                if (result.containsKey(key)) result.put(key, result.get(key) + 1);
+                else result.put(key, 1);
             }
         }
 
-        if (expectedAmountCopy != 0)
-            throw new NotEnoughMoneyException();
-
-        for (Map.Entry<Integer, Integer> entry : result.entrySet()) {
-            int key = entry.getKey();
-            if (tempMap.get(key) != 1)
-                tempMap.put(key, tempMap.get(key) - 1);
-            else
-                tempMap.remove(key);
+        if (sum > 0) throw new NotEnoughMoneyException();
+        else {
+            for (Map.Entry<Integer, Integer> pair : result.entrySet()) {
+                ConsoleHelper.writeMessage("\t" + pair.getKey() + " - " + pair.getValue());
+            }
+            denominations.clear();
+            denominations.putAll(temp);
+            ConsoleHelper.writeMessage("Transaction was successful!");
         }
-
-        denominations.clear();
-        denominations.putAll(tempMap);
 
         return result;
     }
