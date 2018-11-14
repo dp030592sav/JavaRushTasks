@@ -5,95 +5,93 @@ import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ConsoleHelper {
-    private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
+
+    private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final ResourceBundle res
+            = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.common_en");
 
     public static void writeMessage(String message) {
         System.out.println(message);
     }
 
+    public static void printExitMessage() {
+        ConsoleHelper.writeMessage(res.getString("the.end"));
+    }
+
     public static String readString() throws InterruptOperationException {
-        String res = "";
-        while (true) {
-            try {
-                res = bis.readLine();
-                break;
-
-            } catch (IOException e) {
-                writeMessage("Произошла ошибка при попытке ввода текста. Попробуйте еще раз.");
+        String message = "";
+        try {
+            message = reader.readLine();
+            if (message.equalsIgnoreCase(res.getString("operation.EXIT"))) {
+                throw new InterruptOperationException();
             }
+        } catch (IOException ignored) {
         }
-
-        if (res.equalsIgnoreCase("exit"))
-            throw new InterruptOperationException();
-
-        return res.toUpperCase();
+        return message;
     }
 
     public static String askCurrencyCode() throws InterruptOperationException {
-        String currencyCode;
-
-        writeMessage("Введите пожалуйста код валюты");
+        String test;
+        writeMessage(res.getString("choose.currency.code"));
         while (true) {
-            currencyCode = readString();
-            if (currencyCode.length() == 3)
+            test = readString();
+            if (test.length() == 3) {
                 break;
-            else
-                writeMessage("Произошла ошибка при попытке ввода кода валюты. Попробуйте еще раз.");
-        }
+            } else {
+                writeMessage(res.getString("invalid.data"));
+            }
 
-        return currencyCode;
+        }
+        test = test.toUpperCase();
+        return test;
     }
 
     public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
-        String[] result;
+        String[] array;
+        writeMessage(
+                String.format(res.getString("choose.denomination.and.count.format"), currencyCode));
 
-        writeMessage("Введите пожалуйста номинал валют и их количество, через пробел");
         while (true) {
+            String s = readString();
+            array = s.split(" ");
+            int k;
+            int l;
             try {
-                result = readString().split(" ");
-                if (Integer.parseInt(result[0]) >= 0 && Integer.parseInt(result[1]) >= 0)
-                    break;
+                k = Integer.parseInt(array[0]);
+                l = Integer.parseInt(array[1]);
             } catch (Exception e) {
-                writeMessage("Произошла ошибка при попытке ввода номинала валюты и их количества. Попробуйте еще раз.");
+                writeMessage(res.getString("invalid.data"));
+                continue;
             }
+            if (k <= 0 || l <= 0 || array.length > 2) {
+                writeMessage(res.getString("invalid.data"));
+                continue;
+            }
+            break;
         }
-
-        return result;
+        return array;
     }
 
     public static Operation askOperation() throws InterruptOperationException {
-        Operation result;
-
-        writeMessage("Введите пожалуйста тип операции:\n " +
-                "1 - INFO, 2 - DEPOSIT, 3 - WITHDRAW, 4 - EXIT");
         while (true) {
-            try {
-                int operationIndex = Integer.parseInt(readString());
-                result = Operation.getAllowableOperationByOrdinal(operationIndex);
-                break;
-            } catch (Exception e) {
-                writeMessage("Произошла ошибка при попытке ввода номинала валюты и их количества. Попробуйте еще раз.");
+            String line = readString();
+            if (checkWithRegExp(line)) {
+                return Operation.getAllowableOperationByOrdinal(Integer.parseInt(line));
+            } else {
+                writeMessage(res.getString("invalid.data"));
             }
         }
 
-        return result;
     }
 
-    public static int askAmountForWithdraw() throws InterruptOperationException {
-        int result;
-
-        writeMessage("Введите пожалуйста сумму для снятия");
-        while (true) {
-            try {
-                result = Integer.parseInt(readString());
-                break;
-            } catch (NumberFormatException e) {
-                writeMessage("Произошла ошибка при попытке ввода сумму для снятия. Попробуйте еще раз.");
-            }
-        }
-
-        return result;
+    private static boolean checkWithRegExp(String Name) {
+        Pattern p = Pattern.compile("^[1-4]$");
+        Matcher m = p.matcher(Name);
+        return m.matches();
     }
 }

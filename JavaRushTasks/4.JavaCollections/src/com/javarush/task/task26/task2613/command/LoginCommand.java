@@ -10,27 +10,31 @@ public class LoginCommand implements Command {
 
     private ResourceBundle validCreditCards
             = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.verifiedCards");
+    private ResourceBundle res
+            = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.login_en");
 
     @Override
     public void execute() throws InterruptOperationException {
-        long curdNumber, pinCode;
-
-        do {
-            try {
-                ConsoleHelper.writeMessage("Введите пожалусто номер карты");
-                curdNumber = Long.parseLong(ConsoleHelper.readString());
-                ConsoleHelper.writeMessage("Введите пожалусто пин код карты");
-                pinCode = Long.parseLong(ConsoleHelper.readString());
-
-                if(validCreditCards.containsKey(curdNumber + "")
-                        && validCreditCards.getString(curdNumber + "").equals(pinCode + ""))
-                    break;
-                else
-                    ConsoleHelper.writeMessage("Вы ввели неверный номер карты или пин код, попробуйте еще раз пожалуйсто");
-            } catch (NumberFormatException | InterruptOperationException e) {
-                ConsoleHelper.writeMessage("Вы ввели неверный номер карты или пин код, попробуйте еще раз пожалуйсто");
+        ConsoleHelper.writeMessage(res.getString("before"));
+        while (true) {
+            ConsoleHelper.writeMessage(res.getString("specify.data"));
+            String s1 = ConsoleHelper.readString();
+            String s2 = ConsoleHelper.readString();
+            if (validCreditCards.containsKey(s1)) {
+                if (validCreditCards.getString(s1).equals(s2)) {
+                    ConsoleHelper.writeMessage(String.format(res.getString("success.format"), s1));
+                } else {
+                    ConsoleHelper.writeMessage(String.format(res.getString("not.verified.format"), s1));
+                    ConsoleHelper.writeMessage(res.getString("try.again.or.exit"));
+                    continue;
+                }
+            } else {
+                ConsoleHelper.writeMessage(String.format(res.getString("not.verified.format"), s1));
+                ConsoleHelper.writeMessage(res.getString("try.again.with.details"));
+                continue;
             }
-        } while (true);
-        ConsoleHelper.writeMessage("Данные успешно прошли верификацию");
+
+            break;
+        }
     }
 }
