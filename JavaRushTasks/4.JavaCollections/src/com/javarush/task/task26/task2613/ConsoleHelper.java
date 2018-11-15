@@ -6,46 +6,57 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class ConsoleHelper {
+    private static ResourceBundle res = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + ".common_en");
+    private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
-    private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    private static final ResourceBundle res
-            = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.common_en");
-
-    public static void writeMessage(String message) {
-        System.out.println(message);
+    public static void writeMessage(String s) {
+        System.out.println(s);
     }
 
-    public static void printExitMessage() {
-        ConsoleHelper.writeMessage(res.getString("the.end"));
+    public static void printAvailableOperation() {
+        writeMessage( res.getString("operation.INFO") + ": 1;\n" +
+                res.getString("operation.DEPOSIT") + ": 2;\n" +
+                res.getString("operation.WITHDRAW") + ": 3;\n" +
+                res.getString("operation.EXIT") + ": 4\n");
     }
 
+    public static Operation askOperation() throws InterruptOperationException{
+        while (true) {
+            writeMessage(res.getString("choose.operation"));
+            String operation = readString();
+            if (operation.equalsIgnoreCase("help")) {
+                printAvailableOperation();
+                operation = readString();
+            }
+            try {
+                return Operation.getAllowableOperationByOrdinal(Integer.parseInt(operation));
+            } catch (IllegalArgumentException ex) {
+                writeMessage(res.getString("invalid.data"));
+            }
+        }
+    }
     public static String readString() throws InterruptOperationException {
-        String message = "";
+        String result = "";
         try {
-            message = reader.readLine();
-            if (message.equalsIgnoreCase(res.getString("operation.EXIT"))) {
+            result = bis.readLine();
+            if (result.equalsIgnoreCase("EXIT")) {
                 throw new InterruptOperationException();
             }
-        } catch (IOException ignored) {
+        } catch (IOException e) {
         }
-        return message;
+        return result;
     }
 
     public static String askCurrencyCode() throws InterruptOperationException {
         String test;
-        writeMessage(res.getString("choose.currency.code"));
         while (true) {
+            writeMessage(res.getString("choose.currency.code"));
             test = readString();
-            if (test.length() == 3) {
+            if (test.length() == 3)
                 break;
-            } else {
-                writeMessage(res.getString("invalid.data"));
-            }
-
+            writeMessage(res.getString("invalid.data"));
         }
         test = test.toUpperCase();
         return test;
@@ -53,10 +64,8 @@ public class ConsoleHelper {
 
     public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
         String[] array;
-        writeMessage(
-                String.format(res.getString("choose.denomination.and.count.format"), currencyCode));
-
         while (true) {
+            ConsoleHelper.writeMessage(String.format(res.getString("choose.denomination.and.count.format"), currencyCode));
             String s = readString();
             array = s.split(" ");
             int k;
@@ -77,21 +86,7 @@ public class ConsoleHelper {
         return array;
     }
 
-    public static Operation askOperation() throws InterruptOperationException {
-        while (true) {
-            String line = readString();
-            if (checkWithRegExp(line)) {
-                return Operation.getAllowableOperationByOrdinal(Integer.parseInt(line));
-            } else {
-                writeMessage(res.getString("invalid.data"));
-            }
-        }
-
-    }
-
-    private static boolean checkWithRegExp(String Name) {
-        Pattern p = Pattern.compile("^[1-4]$");
-        Matcher m = p.matcher(Name);
-        return m.matches();
+    public static void printExitMessage() {
+        ConsoleHelper.writeMessage(res.getString("the.end"));
     }
 }

@@ -7,20 +7,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandExecutor {
-    private final static Map<Operation, Command> allKnownCommandsMap = new HashMap<>();
+    private static final Map<Operation, Command> allKnownCommandsMap = new HashMap<>();
+
+    private CommandExecutor() {}
 
     static {
-        allKnownCommandsMap.put(Operation.LOGIN, new LoginCommand());
-        allKnownCommandsMap.put(Operation.INFO, new InfoCommand());
-        allKnownCommandsMap.put(Operation.DEPOSIT, new DepositCommand());
-        allKnownCommandsMap.put(Operation.WITHDRAW, new WithdrawCommand());
         allKnownCommandsMap.put(Operation.EXIT, new ExitCommand());
-    }
-
-    private CommandExecutor() {
+        allKnownCommandsMap.put(Operation.DEPOSIT, new DepositCommand());
+        allKnownCommandsMap.put(Operation.INFO, new InfoCommand());
+        allKnownCommandsMap.put(Operation.WITHDRAW, new WithdrawCommand());
+        allKnownCommandsMap.put(Operation.LOGIN, new LoginCommand());
     }
 
     public static final void execute(Operation operation) throws InterruptOperationException {
-        allKnownCommandsMap.get(operation).execute();
+        if (allKnownCommandsMap.containsKey(operation)) {
+            allKnownCommandsMap.get(operation).execute();
+        }
     }
 }

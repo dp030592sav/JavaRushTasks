@@ -4,21 +4,23 @@ import com.javarush.task.task26.task2613.command.CommandExecutor;
 import com.javarush.task.task26.task2613.exception.InterruptOperationException;
 
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class CashMachine {
-    public final static void main(String[] args) {
-        Locale.setDefault(Locale.ENGLISH);
+    public static final String RESOURCE_PATH = CashMachine.class.getPackage().getName() + ".resources.";
 
+    public static void main(String[] args) {
+        ResourceBundle res = ResourceBundle.getBundle(RESOURCE_PATH + ".common_en");
+        Locale.setDefault(Locale.ENGLISH);
+        Operation op;
         try {
             CommandExecutor.execute(Operation.LOGIN);
-            Operation operation;
+            ConsoleHelper.writeMessage(res.getString("write.help") + "\n");
             do {
-                operation = ConsoleHelper.askOperation();
-                CommandExecutor.execute(operation);
-            } while (operation != Operation.EXIT);
-        } catch (InterruptOperationException e) {
-            ConsoleHelper.writeMessage("До новых встреч");
-        }
-        System.out.println( CurrencyManipulatorFactory.getManipulatorByCurrencyCode("usd").isAmountAvailable(0));
+                op = ConsoleHelper.askOperation();
+                CommandExecutor.execute(op);
+            } while (op != Operation.EXIT);
+        } catch (InterruptOperationException ignored) {}
+        ConsoleHelper.printExitMessage();
     }
 }
