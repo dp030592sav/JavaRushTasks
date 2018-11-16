@@ -7924,3 +7924,30 @@ invalidated at: see attachment
 2018-11-16 10:37:56 INFO  ApacheHttpClient.refreshUserInfo(297) - Информация о пользователе получена.
 2018-11-16 10:37:56 INFO  ApacheHttpClient.startGA(31) - GAService запущен.
 2018-11-16 10:37:56 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-11-16 10:38:28 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:38:28 INFO  ApacheHttpClient.getFilteredTasks(324) - responseCode = 200
+2018-11-16 10:38:56 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-16 10:39:14 INFO  ApacheHttpClient.getTaskTemplateInfo(341) - responseCode = 200
+2018-11-16 10:39:16 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-16 10:39:16 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-16 10:39:17 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-16 10:39:17 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-16 10:39:18 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:39:21 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-16 10:39:21 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-16 10:39:23 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-16 10:39:23 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-16 10:39:23 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:39:56 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-16 10:40:56 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-16 10:41:01 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:41:02 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:41:02 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-16 10:41:04 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-11-16 10:41:56 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-16 10:42:45 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:42:46 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-16 10:42:46 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-16 10:42:49 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-11-16 10:42:49 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-16 10:42:56 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
