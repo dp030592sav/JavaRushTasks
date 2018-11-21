@@ -8379,3 +8379,226 @@ invalidated at: see attachment
 2018-11-21 12:00:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
 2018-11-21 12:01:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
 2018-11-21 12:02:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:02:41 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:02:41 INFO  ApacheHttpClient.getFilteredTasks(324) - responseCode = 200
+2018-11-21 12:02:44 INFO  ApacheHttpClient.getTaskTemplateInfo(341) - responseCode = 200
+2018-11-21 12:02:45 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:02:45 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:02:45 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:02:45 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:02:45 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:02:45 INFO  ApacheHttpClient.getTaskTemplateInfo(341) - responseCode = 200
+2018-11-21 12:02:47 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:02:47 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:03:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:03:47 INFO  ApacheHttpClient.testConnection(187) - responseCode = 503
+2018-11-21 12:03:47 WARN  ApacheHttpClient.testConnection(192) - HTTP/1.1 503 Service Temporarily Unavailable [Server: nginx, Date: Wed, 21 Nov 2018 10:03:48 GMT, Content-Type: text/html, Content-Length: 307, Connection: keep-alive, ETag: "5bed65f4-133"] [Content-Length: 307,Chunked: false]
+2018-11-21 12:03:47 INFO  ApacheHttpClient.testConnection(198) - result = false
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.error(134) - Assertion failed: Provider com.javarush.plugin.TestEditorProvider@2c066d15 doesn't accept file file://D:/GitHub/JavaRushTasks/4.JavaCollections/src/com/javarush/task/task40/task4009/Условие.jrtc
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.Logger.assertTrue(Logger.java:168)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl4$6(FileEditorManagerImpl.java:826)
+	at com.intellij.openapi.application.ReadAction.compute(ReadAction.java:47)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:822)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl3(FileEditorManagerImpl.java:787)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl2$4(FileEditorManagerImpl.java:769)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:149)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:109)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:99)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:85)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl2(FileEditorManagerImpl.java:769)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:700)
+	at com.intellij.openapi.fileEditor.ex.FileEditorManagerEx.openFile(FileEditorManagerEx.java:149)
+	at com.javarush.plugin.TaskInfoSelectorMouseListener$WriteTaskTemplateAction.run(TaskInfoSelectorMouseListener.java:323)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1030)
+	at com.javarush.plugin.TaskInfoSelectorMouseListener.selectTask(TaskInfoSelectorMouseListener.java:107)
+	at com.javarush.plugin.TaskInfoSelectorMouseListener.mouseClicked(TaskInfoSelectorMouseListener.java:68)
+	at java.awt.AWTEventMulticaster.mouseClicked(AWTEventMulticaster.java:270)
+	at java.awt.Component.processMouseEvent(Component.java:6544)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6306)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4897)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:821)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:645)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:365)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:109)
+	at java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.awt.Dialog.show(Dialog.java:1084)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:736)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:458)
+	at com.intellij.openapi.ui.DialogWrapper.invokeShow(DialogWrapper.java:1686)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1635)
+	at com.javarush.plugin.button.SelectTaskButton.actionPerformed(SelectTaskButton.java:24)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil$1.run(ActionUtil.java:216)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:233)
+	at com.intellij.openapi.actionSystem.impl.ActionButton.actionPerformed(ActionButton.java:192)
+	at com.intellij.openapi.actionSystem.impl.ActionButton.performAction(ActionButton.java:155)
+	at com.intellij.openapi.actionSystem.impl.ActionButton.processMouseEvent(ActionButton.java:329)
+	at java.awt.Component.processEvent(Component.java:6306)
+	at java.awt.Container.processEvent(Container.java:2237)
+	at java.awt.Component.dispatchEventImpl(Component.java:4897)
+	at java.awt.Container.dispatchEventImpl(Container.java:2295)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4889)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4526)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4467)
+	at java.awt.Container.dispatchEventImpl(Container.java:2281)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4719)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:764)
+	at java.awt.EventQueue.access$500(EventQueue.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:715)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:90)
+	at java.awt.EventQueue$4.run(EventQueue.java:737)
+	at java.awt.EventQueue$4.run(EventQueue.java:735)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:734)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:821)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:645)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:365)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(142) - IntelliJ IDEA 2017.2.4  Build #IC-172.4155.36
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(149) - JDK: 1.8.0_152-release
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(150) - VM: OpenJDK 64-Bit Server VM
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(151) - Vendor: JetBrains s.r.o
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(152) - OS: Windows 10
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(158) - Last Action: TaskChooser
+2018-11-21 12:03:47 ERROR FileEditorManagerImpl.logErrorHeader(165) - Current Command: 
+2018-11-21 12:03:47 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:04:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:04:26 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:04:26 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:04:28 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:04:28 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:04:28 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:05:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:06:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:07:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:08:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:09:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:10:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:11:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:12:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:13:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:14:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:15:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:16:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:17:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:18:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:19:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:20:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:21:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:22:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:23:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:24:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:25:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:26:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:27:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:28:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:29:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:30:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:31:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:31:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:32:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:32:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:32:55 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:32:55 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-21 12:33:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:33:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:34:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:34:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:35:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:35:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:36:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:36:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:37:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:37:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:38:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:38:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:39:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:39:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:40:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:40:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:41:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:41:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:42:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:42:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:43:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:43:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:44:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:44:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:45:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:45:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:46:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:46:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:47:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:47:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:47:55 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:47:55 INFO  ApacheHttpClient.getFilteredTasks(324) - responseCode = 200
+2018-11-21 12:48:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:48:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:49:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:49:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:50:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:50:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:51:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:51:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:52:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:52:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:53:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:53:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:54:17 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:54:18 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:54:18 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-21 12:54:19 INFO  ApacheHttpClient.completed(27) - responseCode = 200
+2018-11-21 12:54:20 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-21 12:54:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:54:22 INFO  ApacheHttpClient.sendEvent(470) - responseCode = 200
+2018-11-21 12:54:47 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:54:47 INFO  ApacheHttpClient.getFilteredTasks(324) - responseCode = 200
+2018-11-21 12:54:49 INFO  ApacheHttpClient.getTaskTemplateInfo(341) - responseCode = 200
+2018-11-21 12:54:51 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:54:51 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:54:53 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:54:53 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:54:53 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-21 12:54:56 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:54:56 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-21 12:54:57 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-21 12:54:57 INFO  ApacheHttpClient.testConnection(198) - result = true
