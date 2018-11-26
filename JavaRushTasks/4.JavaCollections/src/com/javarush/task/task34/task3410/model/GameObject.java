@@ -2,6 +2,7 @@ package com.javarush.task.task34.task3410.model;
 
 import java.awt.*;
 
+// общий класс для всех типов игровых объектов
 public abstract class GameObject {
     private int x;
     private int y;
