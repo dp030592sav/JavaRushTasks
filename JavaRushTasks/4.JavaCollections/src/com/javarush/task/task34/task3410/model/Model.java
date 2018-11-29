@@ -11,7 +11,10 @@ public class Model {
     private EventListener eventListener;
     private GameObjects gameObjects;
     private int currentLevel = 1;
-    private LevelLoader levelLoader = new LevelLoader(Paths.get("..\\res\\levels.txt"));
+    //    private LevelLoader levelLoader = new LevelLoader(Paths.get("..\\res\\levels.txt"));
+    private LevelLoader levelLoader
+            = new LevelLoader(Paths.get(System.getProperty("user.dir")
+            + "\\4.JavaCollections\\src\\com\\javarush\\task\\task34\\task3410\\res\\levels.txt"));
 
     public void setEventListener(EventListener eventListener) {
         this.eventListener = eventListener;
@@ -34,6 +37,29 @@ public class Model {
     }
 
     public void move(Direction direction) {
+        Player player = gameObjects.getPlayer();
+
+        if (checkWallCollision(player, direction))
+            return;
+
+        if (checkBoxCollisionAndMoveIfAvaliable(direction))
+            return;
+
+        switch (direction) {
+            case LEFT:
+                player.move(-FIELD_CELL_SIZE, 0);
+                break;
+            case RIGHT:
+                player.move(FIELD_CELL_SIZE, 0);
+                break;
+            case UP:
+                player.move(0, -FIELD_CELL_SIZE);
+                break;
+            case DOWN:
+                player.move(0, FIELD_CELL_SIZE);
+        }
+
+        checkCompletion();
     }
 
     // Этот метод проверяет столкновение со стеной
@@ -51,11 +77,13 @@ public class Model {
         Box stoppedBox = null;
 
         for (GameObject gameObject : gameObjects.getAll()) {
-            if (gameObject instanceof Box && player.isCollision(gameObject, direction))
-                stoppedBox = (Box)gameObject;
+            if (gameObject instanceof Box && player.isCollision(gameObject, direction)) {
+                stoppedBox = (Box) gameObject;
+                break;
+            }
         }
 
-        if(stoppedBox == null)
+        if (stoppedBox == null)
             return false;
 
         if (checkWallCollision(stoppedBox, direction)) {
@@ -82,5 +110,25 @@ public class Model {
         }
 
         return false;
+    }
+
+    public void checkCompletion() {
+        boolean isLevelCompleted = false;
+
+        for (Home home : gameObjects.getHomes()) {
+            isLevelCompleted = false;
+            for (Box box : gameObjects.getBoxes()) {
+                if (home.getX() == box.getX() && home.getY() == box.getY()) {
+                    isLevelCompleted = true;
+                    break;
+                }
+            }
+
+            if (!isLevelCompleted)
+                break;
+        }
+
+        if (isLevelCompleted)
+            eventListener.levelCompleted(currentLevel);
     }
 }
