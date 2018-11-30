@@ -9665,3 +9665,28 @@ java.lang.Throwable
 
 2018-11-29 12:45:06 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
 2018-11-29 12:45:06 INFO  ApacheHttpClient.getTask(422) - responseCode = 200
+2018-11-30 10:43:37 INFO  JavaRushTasksProjectComponent.projectOpened(68) - ---------- Project JavaRushTasks opened ----------
+2018-11-30 10:43:37 INFO  JavaRushTasksProjectComponent.projectOpened(69) - ---------- Version 3.21 ----------
+
+2018-11-30 10:43:37 INFO  ApacheHttpClient.createAsyncHttpClient(129) - Выбрано 1 прокси. Тип : DIRECT
+2018-11-30 10:43:37 INFO  ApacheHttpClient.<init>(87) - ApacheHttpClient проинстанциирован успешно.
+2018-11-30 10:43:37 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-30 10:43:37 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-30 10:43:37 INFO  ApacheHttpClient.login(228) - Ожидание ответа сервера.
+2018-11-30 10:43:38 INFO  ApacheHttpClient.login(232) - responseCode = 200
+2018-11-30 10:43:38 INFO  ApacheHttpClient.login(263) - JSESSIONID OK
+2018-11-30 10:43:38 INFO  ApacheHttpClient.refreshUserInfo(291) - responseCode = 200
+2018-11-30 10:43:38 INFO  ApacheHttpClient.refreshUserInfo(297) - Информация о пользователе получена.
+2018-11-30 10:43:38 INFO  ApacheHttpClient.startGA(31) - GAService запущен.
+2018-11-30 10:43:38 INFO  AbstractRestApiClient.startService(70) - EventsService запущен.
+2018-11-30 10:43:43 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-30 10:43:43 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-30 10:43:45 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-30 10:43:45 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-30 10:43:45 INFO  ApacheHttpClient.getWebResourceAsStream(437) - responseCode = 200
+2018-11-30 10:43:50 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-30 10:43:50 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-30 10:43:53 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-30 10:43:53 INFO  ApacheHttpClient.testConnection(198) - result = true
+2018-11-30 10:43:55 INFO  ApacheHttpClient.testConnection(187) - responseCode = 200
+2018-11-30 10:43:55 INFO  ApacheHttpClient.testConnection(198) - result = true

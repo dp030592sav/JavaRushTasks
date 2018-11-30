@@ -3,10 +3,9 @@ package com.javarush.task.task34.task3410.model;
 import java.io.*;
 import java.nio.file.Path;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
-
-import static com.javarush.task.task34.task3410.model.Model.FIELD_CELL_SIZE;
 
 public class LevelLoader {
     private Path levels;
@@ -16,30 +15,75 @@ public class LevelLoader {
     }
 
     public GameObjects getLevel(int level) {
+        Set<Wall> walls = new HashSet<>();
+        Set<Box> boxes = new HashSet<>();
+        Set<Home> homes = new HashSet<>();
+        Player player = null;
+
+        ArrayList<String> listLvlLines = new ArrayList<>();
         int currentLevel = level % 60 == 0 ? 60 : level % 60;
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(levels.toFile()));
-            while (reader.ready()){
-                System.out.println(reader.readLine());
+
+        // read needed lvl lines to List<String>
+        try (BufferedReader reader = new BufferedReader(new FileReader(levels.toFile()))) {
+            String readLine;
+            boolean lvlIsFind = false;
+            int counterEmptyLine = 0;
+
+            while (reader.ready()) {
+                readLine = reader.readLine();
+
+                if (readLine.contains("Maze") && Integer.parseInt(readLine.split(" ")[1]) == currentLevel) {
+                    lvlIsFind = true;
+                    continue;
+                }
+
+                if (lvlIsFind && readLine.equals("")) {
+                    counterEmptyLine++;
+                    continue;
+                }
+
+                if (counterEmptyLine == 2)
+                    break;
+
+                if (counterEmptyLine == 1) {
+                    listLvlLines.add(readLine);
+                }
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        // pars List<String> to objects
+        int x;
+        int y = Model.FIELD_CELL_SIZE / 2;
 
-        int x = FIELD_CELL_SIZE/2;
-        int y = FIELD_CELL_SIZE/2;
+        for (String line : listLvlLines) {
+            x = Model.FIELD_CELL_SIZE / 2;
+            char[] chars = line.toCharArray();
 
-        Set<Wall> walls = new HashSet<>();
-        walls.add(new Wall(x, y));
-        walls.add(new Wall(x, y));
-        Set<Box> boxes = new HashSet<>();
-        boxes.add(new Box(x, y));
-        Set<Home> homes = new HashSet<>();
-        homes.add(new Home(x, y));
-        Player player = new Player(x, y);
+            for (char c : chars) {
+                switch (c) {
+                    case 'X':
+                        walls.add(new Wall(x, y));
+                        break;
+                    case '*':
+                        boxes.add(new Box(x, y));
+                        break;
+                    case '.':
+                        homes.add(new Home(x, y));
+                        break;
+                    case '&':
+                        boxes.add(new Box(x, y));
+                        homes.add(new Home(x, y));
+                        break;
+                    case '@':
+                        player = new Player(x, y);
+                        break;
+                }
+                x += Model.FIELD_CELL_SIZE;
+            }
+            y += Model.FIELD_CELL_SIZE;
+        }
 
         return new GameObjects(walls, boxes, homes, player);
     }
