@@ -1,6 +1,4 @@
-taskKey="com.javarush.task.task39.task3904"
-
-Лестница
+taskKey="com.javarush.task.task39.task3904"\n\nЛестница
 
 Ребенок бежит по лестнице состоящей из N ступенек, за 1 шаг он может пройти одну, две или три ступеньки.
 
